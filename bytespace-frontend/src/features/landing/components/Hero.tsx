@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
 
       {/* Main Content & Search */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-display font-extrabold tracking-tight text-white leading-[1.12]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-sans font-bold tracking-tight text-white leading-[1.12]">
           Get Access to Hundreds
           <br />
           Courses Available
