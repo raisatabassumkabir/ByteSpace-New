@@ -25,23 +25,29 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative w-full overflow-hidden bg-brand-600 bg-hero-grid text-white pt-4 md:pt-8 pb-0">
       {/* 3D Abstract Shapes pinned to far screen edges */}
-      <div className="absolute -left-3 sm:left-2 lg:left-6 top-[20%] pointer-events-none z-10 hidden sm:block animate-float-slow">
-        <Neon3DSpring className="w-24 sm:w-32 lg:w-40 h-auto drop-shadow-2xl" />
+      {/* 1. Top Left Neon Spring */}
+      <div className="absolute -left-10 lg:-left-20 top-[15%] lg:top-[12%] pointer-events-none z-10 hidden sm:block -rotate-45 animate-float-slow">
+        <Neon3DSpring className="w-32 sm:w-40 lg:w-56 h-auto drop-shadow-2xl" />
       </div>
-      <div className="absolute left-6 sm:left-12 lg:left-20 top-[50%] pointer-events-none z-10 hidden md:block -rotate-12 animate-float">
-        <White3DSpring className="w-16 sm:w-20 lg:w-26 h-auto drop-shadow-xl" />
+      {/* 2. Mid Left White Spring */}
+      <div className="absolute left-[8%] lg:left-[16%] top-[45%] pointer-events-none z-10 hidden md:block rotate-[30deg] animate-float">
+        <White3DSpring className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-xl" />
       </div>
-      <div className="absolute -left-6 sm:-left-2 lg:left-4 bottom-2 sm:bottom-4 pointer-events-none z-10 hidden sm:block animate-float">
-        <White3DTorus className="w-36 sm:w-48 lg:w-64 h-auto drop-shadow-2xl" />
+      {/* 3. Bottom Left White Torus */}
+      <div className="absolute -left-12 lg:-left-24 bottom-[-5%] sm:bottom-0 lg:bottom-[2%] pointer-events-none z-10 hidden sm:block -rotate-[15deg] animate-float">
+        <White3DTorus className="w-48 sm:w-56 lg:w-[320px] h-auto drop-shadow-2xl" />
       </div>
-      <div className="absolute -right-6 sm:right-0 lg:right-6 top-[18%] pointer-events-none z-10 hidden sm:block animate-float-slow">
-        <Neon3DCylinder className="w-28 sm:w-38 lg:w-48 h-auto drop-shadow-2xl" />
+      {/* 4. Top Right Neon Cylinder */}
+      <div className="absolute -right-10 lg:-right-20 top-[15%] lg:top-[10%] pointer-events-none z-10 hidden sm:block rotate-[25deg] animate-float-slow">
+        <Neon3DCylinder className="w-32 sm:w-44 lg:w-64 h-auto drop-shadow-2xl" />
       </div>
-      <div className="absolute right-8 sm:right-14 lg:right-22 top-[44%] pointer-events-none z-10 hidden md:block rotate-12 animate-float">
-        <White3DPyramid className="w-18 sm:w-24 lg:w-32 h-auto drop-shadow-xl" />
+      {/* 5. Mid Right White Pyramid */}
+      <div className="absolute right-[8%] lg:right-[15%] top-[40%] pointer-events-none z-10 hidden md:block -rotate-[30deg] animate-float">
+        <White3DPyramid className="w-24 sm:w-28 lg:w-36 h-auto drop-shadow-xl" />
       </div>
-      <div className="absolute -right-4 sm:right-2 lg:right-8 bottom-4 sm:bottom-6 pointer-events-none z-10 hidden sm:block animate-float">
-        <White3DSpring className="w-24 sm:w-32 lg:w-42 h-auto drop-shadow-2xl" />
+      {/* 6. Bottom Right White Spring */}
+      <div className="absolute -right-4 lg:-right-8 bottom-[5%] lg:bottom-[10%] pointer-events-none z-10 hidden sm:block rotate-[60deg] animate-float">
+        <White3DSpring className="w-32 sm:w-40 lg:w-52 h-auto drop-shadow-2xl" />
       </div>
 
       {/* Main Content & Search */}
