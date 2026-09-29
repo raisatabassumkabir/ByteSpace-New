@@ -9,7 +9,7 @@ export const courseDetailsData = {
     name: 'PurePearl Studio',
     username: 'purepearl studio',
     role: 'Professional Creator',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    avatar: '/images/purepearl-avatar.png',
     bio: 'Passionate UI/UX Web designer creating scalable design systems and digital products.',
   },
   level: 'Intermediate',
@@ -20,7 +20,7 @@ export const courseDetailsData = {
   duration: '24 hours',
   price: 25,
   originalPrice: 50,
-  videoPoster: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80',
+  videoPoster: '/images/course-video-poster.png',
 
   about: {
     descriptionParagraphs: [
@@ -137,16 +137,7 @@ export const courseDetailsData = {
       { stars: 1, count: 16, percentage: 2 },
     ],
     reviewsList: [
-      {
-        id: 'rev-1',
-        name: 'PurePearl Studio',
-        role: 'UI/UX Designer',
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
-        rating: 5,
-        date: 'a year ago',
-        comment:
-          'This course provided me with a comprehensive understanding of digital asset creation. The lessons were insightful, practical, and immediately applicable to my work. Highly recommended!',
-      },
+
       {
         id: 'rev-2',
         name: 'Alison Flores',
@@ -176,6 +167,36 @@ export const courseDetailsData = {
         date: 'a year ago',
         comment:
           'The lessons on optimizing digital assets for various platforms were particularly insightful. The course caters to the evolving digital landscape, and the engaging content kept me motivated throughout.',
+      },
+      {
+        id: 'rev-5',
+        name: 'Wade Warren',
+        role: 'Front-End Developer',
+        avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&q=80',
+        rating: 4,
+        date: '10 months ago',
+        comment:
+          'Excellent material! The pacing was perfect for me and the video production quality is outstanding. I definitely learned a lot about bridging the gap between design and implementation.',
+      },
+      {
+        id: 'rev-6',
+        name: 'Dianne Russell',
+        role: 'Product Manager',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80',
+        rating: 5,
+        date: '8 months ago',
+        comment:
+          'This course provided me exactly what I needed to better communicate with our design team. The resources are highly organized and the assignments are actually enjoyable to complete.',
+      },
+      {
+        id: 'rev-7',
+        name: 'Jacob Jones',
+        role: 'UX Researcher',
+        avatar: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&q=80',
+        rating: 4,
+        date: '3 months ago',
+        comment:
+          'A very thorough guide indeed. I appreciated the focus on user-centric design principles. Some of the advanced chapters were a bit fast-paced, but overall an incredibly valuable course.',
       },
     ] as CourseReview[],
   },

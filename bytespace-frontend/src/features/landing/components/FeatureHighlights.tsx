@@ -69,16 +69,15 @@ export const FeatureHighlights: React.FC = () => {
               <div className="absolute -right-4 lg:-right-8 top-[10%] z-0 pointer-events-none opacity-95 animate-float-slow">
                 <Neon3DSpring className="w-40 sm:w-48 lg:w-64 h-auto drop-shadow-2xl" />
               </div>
-
-              {/* Image of the male student */}
+              
               <img
                 src="/images/student-hero-portrait.png"
                 alt="Student learning on ByteSpace"
-                className="relative z-20 w-[95%] lg:w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] select-none pointer-events-none lg:scale-[1.15] origin-top"
+                className="relative z-20 w-[95%] lg:w-full h-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] select-none pointer-events-none lg:scale-[1.30] origin-top"
               />
 
               {/* Floating Element 1: Course Card on top-left (Behind the boy) */}
-              <div className="absolute top-[1%] left-[0%] lg:left-[-10%] z-10 bg-white rounded-2xl lg:rounded-3xl p-4 lg:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.1)] w-[50%] lg:w-[380px] text-left animate-float">
+              <div className="absolute top-[1%] left-[0%] lg:left-[-15%] z-10 bg-white rounded-2xl lg:rounded-3xl p-4 lg:p-6 shadow-[0_20px_40px_rgba(0,0,0,0.1)] w-[50%] lg:w-[380px] text-left animate-float">
                 <div className="relative rounded-xl lg:rounded-2xl overflow-hidden aspect-[16/10] bg-gray-100">
                   <img
                     src="/images/wireframe-sketches.png"
@@ -114,14 +113,14 @@ export const FeatureHighlights: React.FC = () => {
               </div>
 
               {/* Floating Element 2: Learning Progress (55%) card on middle-right (In front of laptop) */}
-              <div className="absolute bottom-[43%] right-[0%] lg:right-[15%] z-30 bg-white/95 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-5 shadow-[0_20px_40px_rgba(0,0,0,0.1)] w-[40%] lg:w-[200px] text-left animate-float-slow">
-                <span className="text-slate-500 text-[10px] lg:text-[11px] font-bold uppercase tracking-widest block">
+              <div className="absolute bottom-[35%] right-[0%] lg:right-[5%] z-30 bg-white/95 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-5 lg:p-7 shadow-[0_20px_40px_rgba(0,0,0,0.1)] w-[50%] lg:w-[260px] text-left animate-float-slow">
+                <span className="text-slate-900 font-medium text-[17px] tracking-tight block">
                   Learning Progress
                 </span>
-                <div className="text-slate-900 font-bold text-3xl lg:text-4xl mt-2 leading-none">
+                <div className="text-black font-bold text-4xl lg:text-5xl mt-2 leading-none">
                   55%
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-1.5 lg:h-2 mt-3 overflow-hidden">
+                <div className="w-full bg-slate-100 rounded-full h-2.5 lg:h-3 mt-3 overflow-hidden">
                   <div className="bg-[#B9FF00] h-full rounded-full w-[55%] transition-all duration-700 ease-out" />
                 </div>
               </div>
@@ -149,7 +148,7 @@ export const FeatureHighlights: React.FC = () => {
               {/* Floating Element 1: Two Blue Revenue Chart Cards on top-left (Behind her shoulder) */}
               <div className="absolute top-[10%] left-[0%] lg:left-[0%] z-10 flex flex-col space-y-3 lg:space-y-4 animate-float">
                 {/* Total Revenue Card */}
-                <div className="bg-brand-600 text-white rounded-2xl lg:rounded-3xl p-4 lg:p-5 shadow-2xl text-left w-[200px] lg:w-[280px]">
+                <div className="bg-brand-600 text-white rounded-2xl lg:rounded-3xl p-4 lg:p-5 shadow-2xl text-left w-[200px] lg:w-[300px]">
                   <div className="text-[10px] lg:text-xs font-bold text-brand-100 uppercase tracking-widest">Total Revenue</div>
                   <div className="text-[9px] lg:text-[11px] text-brand-200 mt-0.5">July 1-28</div>
                   <div className="text-2xl lg:text-3xl font-bold text-white mt-1.5 tracking-tight">
@@ -176,22 +175,25 @@ export const FeatureHighlights: React.FC = () => {
               </div>
 
               {/* Floating Element 2: Happy Students Card on bottom-right */}
-              <div className="absolute bottom-[30%] right-[0%] lg:right-[5%] z-30 bg-white/95 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-5 shadow-[0_20px_40px_rgba(0,0,0,0.1)] text-left w-[180px] lg:w-[220px] animate-float-slow">
-                <h4 className="text-slate-900 font-bold text-xs lg:text-sm">
+              <div className="absolute bottom-[30%] right-[0%] lg:right-[0%] z-30 bg-white/95 backdrop-blur-xl rounded-[20px] p-4 sm:p-5 shadow-[0_20px_40px_rgba(0,0,0,0.1)] text-left min-w-[260px] animate-float-slow">
+                <h4 className="text-slate-900 font-medium text-[17px] tracking-tight">
                   Happy Students
                 </h4>
-                <div className="flex items-center gap-1.5 text-[10px] lg:text-xs text-slate-500 font-bold mt-1">
-                  <span>4.5</span>
-                  <span>(240)</span>
-                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 inline" />
+                <div className="flex items-center gap-1.5 text-[15px] font-medium mt-0.5">
+                  <span className="text-slate-700">4.5</span>
+                  <span className="text-slate-400 font-normal">(240)</span>
+                  <Star className="w-4 h-4 fill-[#CCFF00] text-[#CCFF00] inline -mt-0.5" />
                 </div>
                 {/* Overlapping Avatar Stack */}
                 <div className="flex items-center mt-3">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Student 1" className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-[3px] border-white object-cover shadow-sm" />
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Student 2" className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-[3px] border-white object-cover shadow-sm -ml-3" />
-                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Student 3" className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-[3px] border-white object-cover shadow-sm -ml-3" />
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Student 4" className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-[3px] border-white object-cover shadow-sm -ml-3" />
-                  <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-[3px] border-white bg-[#B9FF00] text-slate-900 font-bold text-[9px] lg:text-[10px] flex items-center justify-center -ml-3 shadow-sm z-10">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Student 1" className="w-10 h-10 rounded-full object-cover shadow-sm" />
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student 2" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[1]" />
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Student 3" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[2]" />
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student 4" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[3]" />
+                  <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="Student 5" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[4]" />
+                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" alt="Student 6" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[5]" />
+                  <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80" alt="Student 7" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[6]" />
+                  <div className="w-10 h-10 rounded-full bg-[#CCFF00] text-slate-900 font-bold text-xs flex items-center justify-center -ml-3.5 relative z-[7] shadow-sm">
                     2K+
                   </div>
                 </div>

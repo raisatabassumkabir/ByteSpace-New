@@ -21,10 +21,7 @@ export const CreatorHeader: React.FC = () => {
 
   return (
     <section className="relative bg-brand-600 bg-hero-grid text-white pt-8 pb-16 overflow-hidden">
-      {/* Decorative Sparkle */}
-      <div className="absolute top-10 right-20 opacity-40 pointer-events-none hidden md:block">
-        <SparkleShape className="w-10 h-10" color="#CCFF00" />
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-start gap-6 lg:gap-8">
@@ -33,55 +30,52 @@ export const CreatorHeader: React.FC = () => {
             <img
               src={mockCreatorData.avatar}
               alt={mockCreatorData.name}
-              className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl object-cover ring-4 ring-white/20 shadow-2xl"
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-[28px] object-cover shadow-sm"
             />
           </div>
 
           {/* Details & Bio */}
           <div className="space-y-4 flex-1">
-            <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-2xl sm:text-3xl font-display font-black text-white tracking-tight">
+            <div className="flex flex-wrap items-center gap-4">
+              <h1 className="text-[32px] sm:text-4xl font-bold text-white tracking-tight">
                 {mockCreatorData.name}
               </h1>
-              <Badge variant="neon" size="sm" className="font-bold px-3 py-1">
+              <Badge variant="neon" size="md" className="font-bold px-4 py-1.5 text-surface-900 bg-neon">
                 {mockCreatorData.badge}
               </Badge>
             </div>
 
-            <p className="text-sm font-semibold text-white/90">
+            <p className="text-[15px] font-normal text-surface-100">
               {mockCreatorData.headline}
             </p>
 
-            <p className="text-xs sm:text-sm text-white/80 max-w-3xl leading-relaxed whitespace-pre-line font-normal">
+            <p className="text-[15px] text-white/90 max-w-5xl leading-[1.8] whitespace-pre-wrap font-normal">
               {mockCreatorData.bio}
             </p>
 
             {/* Stat Pills & Follow Button */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-4">
+              <div className="flex items-center gap-4">
                 {/* 3 Products Pill */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-surface-900 text-xs font-bold shadow-sm">
-                  <Package className="w-3.5 h-3.5 text-brand-600" />
-                  <span>{mockCreatorData.productsCount} Products</span>
+                <div className="inline-flex items-center gap-1.5 px-6 py-2 rounded-full bg-white shadow-sm">
+                  <span className="text-brand-600 text-[15px] font-medium">{mockCreatorData.productsCount}</span>
+                  <span className="text-surface-900 text-[15px] font-medium">Products</span>
                 </div>
 
                 {/* Followers Pill */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-surface-900 text-xs font-bold shadow-sm">
-                  <Users className="w-3.5 h-3.5 text-brand-600" />
-                  <span>{followers} Followers</span>
+                <div className="inline-flex items-center gap-1.5 px-6 py-2 rounded-full bg-white shadow-sm">
+                  <span className="text-brand-600 text-[15px] font-medium">{followers}</span>
+                  <span className="text-surface-900 text-[15px] font-medium">Followers</span>
                 </div>
               </div>
 
               {/* Follow Button */}
-              <Button
-                variant={isFollowing ? 'secondary' : 'neon'}
-                size="md"
+              <button
                 onClick={handleFollowToggle}
-                className="font-bold text-xs px-6 py-2 shadow-neon-sm"
-                leftIcon={isFollowing ? <Check className="w-3.5 h-3.5" /> : <UserPlus className="w-3.5 h-3.5" />}
+                className="inline-flex items-center justify-center px-8 py-2.5 rounded-full bg-neon text-surface-900 text-[15px] font-medium hover:bg-neon-hover transition-colors"
               >
                 {isFollowing ? 'Following' : 'Follow'}
-              </Button>
+              </button>
             </div>
           </div>
         </div>

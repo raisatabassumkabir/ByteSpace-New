@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, LogOut, ShoppingBag } from 'lucide-react';
 import { ByteSpaceLogo } from '@/assets/icons/ByteSpaceLogo';
 import { Button } from '@/components/ui/Button';
@@ -13,6 +13,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ variant = 'transparent-on-blue' }) => {
   const scrollY = useScrollPosition();
+  const location = useLocation();
   const { user, isAuthenticated, logout } = useAuthStore();
   const { isMobileMenuOpen, toggleMobileMenu, bookmarkedCourseIds } = useUIStore();
 
@@ -47,20 +48,27 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'transparent-on-blue' 
 
           {/* Desktop Navigation Links verbatim */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.path}
-                className={cn(
-                  'text-sm font-semibold transition-colors duration-200',
-                  variant === 'white' && !isScrolled
-                    ? 'text-surface-700 hover:text-brand-600'
-                    : 'text-white/90 hover:text-white'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.label}
+                  to={link.path}
+                  className={cn(
+                    'text-sm font-semibold transition-colors duration-200',
+                    variant === 'white' && !isScrolled
+                      ? isActive
+                        ? 'text-brand-600'
+                        : 'text-surface-700 hover:text-brand-600'
+                      : isActive
+                      ? 'text-white'
+                      : 'text-white/60 hover:text-white'
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Right Action Buttons */}
@@ -124,12 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'transparent-on-blue' 
               title="Shopping Cart / Course Details"
               aria-label="Shopping Bag"
             >
-              <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
-              {bookmarkedCourseIds.length > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-neon text-[10px] font-black text-surface-900">
-                  {bookmarkedCourseIds.length}
-                </span>
-              )}
+              <ShoppingBag className="w-6 h-6 stroke-[1.8]" />
             </Link>
           </div>
 

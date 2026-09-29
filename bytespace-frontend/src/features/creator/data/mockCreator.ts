@@ -19,9 +19,9 @@ export const mockCreatorData: CreatorProfileData = {
   id: 'purepearl-studio',
   name: 'PurePearl Studio',
   badge: 'Creator',
-  headline: 'Passionate UI/UX Web designer',
-  bio: "Welcome to the creative world of PurePearl Studio. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together.\nDive into my creative portfolio, showcasing a glimpse of my artistic endeavors, from digital designs to multimedia projects, each piece tells a unique story. Explore the world of creativity with me.",
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80',
+  headline: 'Passionate UI/UX, Web designer',
+  bio: "Welcome to the creative world of [Creator's Name]. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together!\nive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital designs to multimedia projects, each piece tells a unique story. Explore the world of creativity with me.",
+  avatar: '/images/creator-avatar.png',
   productsCount: 3,
   followersCount: 12,
 };

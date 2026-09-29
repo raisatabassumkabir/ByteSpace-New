@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
           Courses Available
         </h1>
 
-        <p className="mt-4 text-sm sm:text-base md:text-lg text-white/85 max-w-2xl mx-auto font-normal leading-relaxed">
+        <p className="mt-4 text-sm sm:text-base md:text-lg text-white/85 max-w-4xl mx-auto font-normal leading-relaxed">
           Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
         </p>
 
@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
            */}
 
           {/* Card 1: UI/UX Design — Middle-Left */}
-          <div className="absolute left-[5%] sm:left-[9%] md:left-[13%] lg:left-[15%] top-[30%] sm:top-[32%] z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/80 min-w-[148px] sm:min-w-[180px] text-left animate-float">
+          <div className="absolute left-[5%] sm:left-[9%] md:left-[13%] lg:left-[10%] top-[30%] sm:top-[23%] z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/80 min-w-[148px] sm:min-w-[180px] text-left animate-float">
             <h4 className="text-slate-900 font-bold text-xs sm:text-sm tracking-tight">UI/UX Design</h4>
             <p className="text-slate-400 text-[10px] sm:text-xs font-medium mt-1">
               200 Courses &bull; 1000+ Students
@@ -115,32 +115,35 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Card 2: Learning Progress 55% — Middle-Right */}
-          <div className="absolute right-[5%] sm:right-[9%] md:right-[13%] lg:right-[15%] top-[32%] sm:top-[34%] z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 shadow-2xl border border-white/80 min-w-[150px] sm:min-w-[190px] text-left animate-float-slow">
-            <span className="text-slate-500 text-[10px] sm:text-xs font-semibold uppercase tracking-wider block">
+          <div className="absolute right-[10%] sm:right-[5%] md:right-[15%] lg:right-[15%] top-[32%] sm:top-[30%] z-20 bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-7 shadow-2xl border border-white/80 min-w-[220px] sm:min-w-[260px] text-left animate-float-slow">
+            <span className="text-slate-900 font-medium text-[17px] tracking-tight block">
               Learning Progress
             </span>
-            <div className="text-slate-900 font-black text-2xl sm:text-3xl mt-1 leading-none tracking-tight">
+            <div className="text-black font-bold text-3xl sm:text-4xl mt-2 leading-none tracking-tight">
               55%
             </div>
-            <div className="w-full bg-slate-100 rounded-full h-2 mt-2.5 overflow-hidden">
+            <div className="w-full bg-slate-100 rounded-full h-3 mt-3 overflow-hidden">
               <div className="bg-neon h-full rounded-full w-[55%] transition-all duration-700 ease-out" />
             </div>
           </div>
 
           {/* Card 3: Happy Students — Bottom-Left */}
-          <div className="absolute left-[3%] sm:left-[7%] md:left-[11%] lg:left-[13%] bottom-[10%] sm:bottom-[12%] z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/80 text-left animate-float">
-            <h4 className="text-slate-900 font-bold text-xs sm:text-sm tracking-tight">Happy Students</h4>
-            <div className="flex items-center gap-1 text-[11px] sm:text-xs text-slate-500 font-semibold mt-0.5">
-              <span>4.5</span>
-              <span>(240)</span>
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 inline" />
+          <div className="absolute left-[-15%] sm:left-[5%] md:left-[11%] lg:left-[5%] bottom-[10%] sm:bottom-[20%] z-20 bg-white/95 backdrop-blur-md rounded-[20px] p-4 sm:p-5 shadow-2xl border border-white/80 min-w-[260px] text-left animate-float">
+            <h4 className="text-slate-900 font-medium text-[17px] tracking-tight">Happy Students</h4>
+            <div className="flex items-center gap-1.5 text-[15px] font-medium mt-0.5">
+              <span className="text-slate-700">4.5</span>
+              <span className="text-slate-400 font-normal">(240)</span>
+              <Star className="w-4 h-4 fill-[#CCFF00] text-[#CCFF00] inline -mt-0.5" />
             </div>
-            <div className="flex items-center mt-2.5">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Student 1" className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Student 2" className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm -ml-2" />
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Student 3" className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm -ml-2" />
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Student 4" className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-sm -ml-2" />
-              <div className="w-7 h-7 rounded-full border-2 border-white bg-neon text-slate-950 font-black text-[10px] flex items-center justify-center -ml-2 shadow-sm">
+            <div className="flex items-center mt-3">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Student 1" className="w-10 h-10 rounded-full object-cover shadow-sm" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student 2" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[1]" />
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Student 3" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[2]" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student 4" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[3]" />
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="Student 5" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[4]" />
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" alt="Student 6" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[5]" />
+              <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80" alt="Student 7" className="w-10 h-10 rounded-full object-cover shadow-sm -ml-3.5 relative z-[6]" />
+              <div className="w-10 h-10 rounded-full bg-[#CCFF00] text-slate-900 font-bold text-xs flex items-center justify-center -ml-3.5 relative z-[7] shadow-sm">
                 2K+
               </div>
             </div>

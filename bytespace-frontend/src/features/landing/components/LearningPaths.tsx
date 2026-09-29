@@ -25,7 +25,7 @@ export const LearningPaths: React.FC = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 w-full max-w-7xl mx-auto px-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-12 lg:gap-16 w-full max-w-7xl mx-auto px-2">
           {paths.map((path) => {
             const Icon = path.icon;
             return (

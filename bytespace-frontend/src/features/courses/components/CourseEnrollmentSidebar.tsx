@@ -30,7 +30,7 @@ export const CourseEnrollmentSidebar: React.FC = () => {
               className="flex items-center justify-between text-xs py-1.5 hover:bg-surface-50 px-2 rounded-lg transition-colors"
             >
               <div className="flex items-center gap-2.5 max-w-[210px]">
-                <span className="font-bold text-surface-400">{lesson.number}</span>
+                <span className="font-bold text-surface-900">{lesson.number}</span>
                 <span className="text-surface-700 font-medium truncate">{lesson.title}</span>
               </div>
               <span className="text-brand-600 font-semibold text-[11px] shrink-0">
@@ -51,12 +51,12 @@ export const CourseEnrollmentSidebar: React.FC = () => {
           Ready to Dive In? Enroll Now and Start Building Your Digital Future!
         </p>
 
-        <div className="flex items-baseline gap-2.5">
-          <span className="text-3xl sm:text-4xl font-display font-black text-surface-900">
+        <div className="flex items-baseline gap-1">
+          <span className="text-3xl sm:text-4xl font-display font-black text-brand-600">
             ${courseDetailsData.price}
           </span>
-          <span className="text-sm text-surface-400 line-through">
-            ${courseDetailsData.originalPrice}/lifetime
+          <span className="text-[11px] text-surface-400 font-medium">
+            /lifetime
           </span>
         </div>
 
@@ -72,7 +72,7 @@ export const CourseEnrollmentSidebar: React.FC = () => {
 
       {/* This Course Include Section */}
       <div className="space-y-3 pt-2">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-surface-900">
+        <h4 className="text-[15px] font-bold text-surface-900 tracking-tight">
           This course include
         </h4>
         <ul className="space-y-2.5">
@@ -107,12 +107,10 @@ export const CourseEnrollmentSidebar: React.FC = () => {
           Ready to Dive In? Enroll Now and Start Building Your Digital Future!
         </p>
 
-        <Link to="/creator" className="block">
+        <Link to="/creator" className="inline-block mt-1">
           <Button
             variant="outline"
-            size="sm"
-            className="w-full text-xs font-semibold hover:border-brand-600 hover:text-brand-600"
-            rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+            className="text-[11px] px-6 py-2.5 font-semibold hover:border-brand-600 hover:text-brand-600 rounded-full text-surface-900 border-surface-200"
           >
             See Full Profile
           </Button>
