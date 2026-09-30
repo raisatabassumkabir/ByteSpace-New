@@ -35,7 +35,7 @@ export const FeatureHighlights: React.FC = () => {
           {/* Row 1 Mobile */}
           <div>
             <div className="text-left w-full">
-              <h2 className="text-[36px] font-bold leading-[1.1] text-slate-900 tracking-tight">
+              <h2 className="text-[28px] sm:text-[36px] font-bold leading-[1.1] text-slate-900 tracking-tight">
                 Your Path to Professional
                 <br />Growth Starts Here!
               </h2>
@@ -148,9 +148,9 @@ export const FeatureHighlights: React.FC = () => {
         <div className="hidden lg:block space-y-20">
           
           {/* Row 1: Text Left, Image Right */}
-          <div className="flex items-center justify-between gap-[200px] xl:gap-[250px]">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 xl:gap-[200px] 2xl:gap-[250px]">
             {/* Left Column: Heading, Paragraph, Statistics */}
-            <div className="text-left w-full lg:max-w-[574px] shrink-0">
+            <div className="text-left w-full lg:max-w-[450px] xl:max-w-[574px] shrink-0">
               <h2 className="text-[48px] lg:text-[56px] font-bold leading-[1.1] text-slate-900 tracking-tight">
                 <span className="whitespace-nowrap">Your Path to Professional</span>
                 <br />Growth Starts Here!
@@ -184,7 +184,7 @@ export const FeatureHighlights: React.FC = () => {
             </div>
 
             {/* Right Column: Image and UI Cards wrapper */}
-            <div className="relative flex justify-center w-full lg:max-w-[621px] mx-auto shrink-0 mt-0">
+            <div className="relative flex justify-center w-full lg:max-w-[450px] xl:max-w-[621px] mx-auto shrink-0 mt-12 lg:mt-0">
               
               {/* Neon Green Squiggle / Spring */}
               <div className="absolute lg:right-[2%] lg:top-[10%] z-40 pointer-events-none animate-float-slow">
@@ -251,9 +251,9 @@ export const FeatureHighlights: React.FC = () => {
           </div>
 
           {/* Row 2: Image Left, Text Right */}
-          <div className="flex items-center justify-between gap-[200px] xl:gap-[250px] pt-8">
+          <div className="flex items-center justify-between gap-12 lg:gap-8 xl:gap-[200px] 2xl:gap-[250px] pt-8">
             {/* Left Column: Image and Cards Container */}
-            <div className="relative flex justify-center w-full lg:max-w-[621px] mx-auto shrink-0 mt-0">
+            <div className="relative flex justify-center w-full lg:max-w-[450px] xl:max-w-[621px] mx-auto shrink-0 mt-0">
               
               {/* Neon Green Squiggle / Spring */}
               <div className="absolute lg:right-[2%] lg:top-[20%] z-30 pointer-events-none animate-float-slow">
@@ -324,7 +324,7 @@ export const FeatureHighlights: React.FC = () => {
             </div>
             
             {/* Right Column: Heading, Paragraph, 4 Checklist Items */}
-            <div className="text-left w-full lg:max-w-[574px] shrink-0">
+            <div className="text-left w-full lg:max-w-[450px] xl:max-w-[574px] shrink-0">
               <h2 className="lg:text-[56px] font-bold leading-[1.1] text-slate-900 tracking-tight">
                 Create & Manage
                 <br />Courses Easily.
