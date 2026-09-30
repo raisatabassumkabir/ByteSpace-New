@@ -1,123 +1,128 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Star, ArrowLeft, ShieldCheck, Zap } from 'lucide-react';
 import { ByteSpaceLogo } from '@/assets/icons/ByteSpaceLogo';
-import { SparkleShape, SquiggleShape } from '@/assets/illustrations/DecorativeShapes';
 
 interface AuthLayoutProps {
   children: React.ReactNode;
-  title: string;
-  subtitle: string;
+  mode?: 'login' | 'register';
 }
 
-export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitle }) => {
+export const AuthLayout: React.FC<AuthLayoutProps> = ({
+  children,
+  mode = 'login',
+}) => {
+  const isLogin = mode === 'login';
+
   return (
-    <div className="min-h-screen w-full flex flex-col lg:flex-row bg-surface-50 font-sans">
-      {/* Left Branding Panel (Deep Royal Blue) */}
-      <div className="relative hidden lg:flex lg:w-1/2 bg-brand-600 flex-col justify-between p-12 overflow-hidden text-white bg-hero-grid">
-        {/* Floating Background Glow & Decorative Elements */}
-        <div className="absolute top-10 right-10 opacity-70 animate-float pointer-events-none">
-          <SparkleShape className="w-12 h-12" color="#CCFF00" />
-        </div>
-        <div className="absolute bottom-20 left-10 opacity-50 animate-float-slow pointer-events-none">
-          <SquiggleShape className="w-24 h-10" color="#CCFF00" />
-        </div>
-        <div className="absolute top-1/4 -right-20 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-neon/15 blur-3xl pointer-events-none" />
+    <div className="min-h-screen w-full bg-[#003BE2] bg-hero-grid text-white relative flex flex-col justify-start overflow-x-hidden selection:bg-neon selection:text-surface-900">
+      
+      {/* Figma Header_Frame: x: 0, y: 0, h: 120. Logo at x: 122, y: 35, w: 171, h: 37 */}
+      <header className="w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-28 pt-8 lg:pt-9 pb-2 flex items-center z-20">
+        <Link to="/" className="inline-block hover:opacity-95 transition-opacity" title="ByteSpace Home">
+          <ByteSpaceLogo variant="on-blue" />
+        </Link>
+      </header>
 
-        {/* Top Logo & Back to Home */}
-        <div className="relative z-10 flex items-center justify-between">
-          <Link to="/" className="inline-block">
-            <ByteSpaceLogo variant="on-blue" />
-          </Link>
-          <Link
-            to="/"
-            className="flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-neon transition-colors bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-md"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to site</span>
-          </Link>
-        </div>
-
-        {/* Center Floating Social Proof / Feature Showcase Card */}
-        <div className="relative z-10 max-w-md mx-auto my-auto space-y-6">
-          <div className="glass-card rounded-3xl p-7 border border-white/20 shadow-2xl backdrop-blur-xl relative">
-            {/* Floating Top Badge */}
-            <div className="absolute -top-3.5 right-6 bg-neon text-surface-900 text-[11px] font-black uppercase px-3 py-1 rounded-full shadow-neon-sm flex items-center gap-1">
-              <Zap className="w-3 h-3 fill-surface-900" />
-              <span>Verified Alum</span>
+      {/* Main 1440px Canvas Layout */}
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-6 sm:px-12 lg:px-28 py-2 lg:py-4 z-10 flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start w-full">
+          
+          {/* Left Side: Headline, Subtitle, and Pixel-Exact Composition from Figma & Reference Picture */}
+          <div className="hidden lg:flex lg:col-span-6 xl:col-span-7 flex-col space-y-4 relative">
+            
+            {/* Text Frame verbatim from Figma (Heading XS: 20px Poppins SemiBold, Body L: 18px Satoshi Regular) */}
+            <div className="space-y-3 max-w-[475px]">
+              <h1 className="text-[20px] font-display font-semibold text-[#F5F5F6] tracking-tight leading-snug">
+                {isLogin ? 'Sign in with ease' : 'Sign up and come in'}
+              </h1>
+              <p className="text-[18px] text-[#F5F5F6]/90 leading-[1.6] font-normal">
+                {isLogin
+                  ? 'Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge.'
+                  : 'The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost'}
+              </p>
             </div>
 
-            {/* Star Rating */}
-            <div className="flex items-center gap-1 text-amber-400 mb-3">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-              ))}
-              <span className="ml-2 text-xs font-bold text-white">5.0 / 5.0</span>
-            </div>
-
-            <p className="text-white text-base leading-relaxed font-medium mb-6">
-              "ByteSpace is the gold standard for tech education. The project-driven curriculum and weekly code reviews helped me land my dream role as a Senior Frontend Engineer."
-            </p>
-
-            <div className="flex items-center gap-3 pt-3 border-t border-white/15">
-              <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-                alt="Student avatar"
-                className="w-11 h-11 rounded-full object-cover ring-2 ring-neon"
-              />
-              <div>
-                <h4 className="font-bold text-sm text-white">Elena Vasquez</h4>
-                <p className="text-xs text-white/70">Staff Engineer at Vercel</p>
+            {/* Visual Artboard: Exact Figma Coordinates calibrated from Node IDs #2007:493, #2007:524, #2007:555, #2007:572, #2007:577, #2007:582 */}
+            <div className="relative w-[540px] h-[650px] select-none pointer-events-none mt-1">
+              
+              {/* 1. White Card: "Build Digital Asset" (#2007:493: x: 122, y: 394 -> left: 0px, top: 104px, z-10 BEHIND) */}
+              <div className="absolute left-0 top-[104px] w-[373px] h-[384px] z-10 drop-shadow-xl">
+                <img
+                  src="/images/auth/card-build-digital-asset.png"
+                  alt="Build Digital Asset Course Card"
+                  className="w-full h-auto object-contain rounded-[24px]"
+                />
               </div>
+
+              {/* 2. Black Card: "the Power of Big Data" (#2007:524: x: 233, y: 305 -> left: 111px, top: 15px, z-20 IN FRONT) */}
+              <div className="absolute left-[111px] top-[15px] w-[373px] h-[384px] z-20 drop-shadow-2xl">
+                <img
+                  src="/images/auth/card-power-of-big-data.png"
+                  alt="the Power of Big Data Course Card"
+                  className="w-full h-auto object-contain rounded-[24px]"
+                />
+              </div>
+
+              {/* 3. Happy Students Card: (#2007:555: x: 348, y: 740 -> left: 226px, top: 450px, w: 258px, z-30) Flush with black card right edge */}
+              <div className="absolute left-[226px] top-[450px] z-30 bg-[#D4FB20] text-[#242528] rounded-[16px] p-4 shadow-2xl border border-black/5 flex flex-col gap-2 w-[258px] backdrop-blur-[10px]">
+                <div className="space-y-0.5">
+                  <span className="text-[16px] font-medium text-[#242528] block">Happy Students</span>
+                  <div className="flex items-center gap-1 font-bold text-xs text-[#242528]">
+                    <span>4.5</span>
+                    <span className="text-[#4B4C53] font-normal">(240)</span>
+                    <span className="text-[#003BE2] font-black text-sm ml-0.5">★</span>
+                  </div>
+                </div>
+                <div className="flex items-center -space-x-1.5 pt-0.5 overflow-hidden">
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#D4FB20] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#D4FB20] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#D4FB20] object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#D4FB20] object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#D4FB20] object-cover" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=80&q=80" alt="" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-[#D4FB20] object-cover" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&q=80" alt="" />
+                  <span className="bg-[#242528] text-white text-[11px] font-bold px-2 py-1.5 rounded-full shrink-0 flex items-center justify-center ring-2 ring-[#D4FB20]">
+                    2K+
+                  </span>
+                </div>
+              </div>
+
+              {/* 4. 3D Elements: ALL IN FRONT OF EVERYTHING (z-50) */}
+              
+              {/* Neon Ring: at top-left (#2007:577 position: x: 151, y: 320 -> left: 29px, top: 30px, w: 146px, h: 146px, z-50) */}
+              <img
+                src="/images/auth/shape-neon-torus.png"
+                alt="Neon Ring"
+                className="absolute left-[29px] top-[30px] w-[146px] h-[146px] object-contain z-50 drop-shadow-2xl -rotate-12 animate-float-slow"
+              />
+
+              {/* Neon Pyramid: at bottom-left (#2007:582 position: x: 97, y: 702 -> left: -25px, top: 412px, w: 188px, h: 188px, z-50) */}
+              <img
+                src="/images/auth/shape-neon-pyramid.png"
+                alt="Neon Pyramid"
+                className="absolute -left-[25px] top-[412px] w-[188px] h-[188px] object-contain z-50 drop-shadow-2xl animate-float"
+              />
+
+              {/* White Spring (Spiral): at right flank (#2007:572 position: x: 470, y: 626 -> left: 348px, top: 336px, w: 175px, h: 175px, z-50) */}
+              <img
+                src="/images/auth/shape-white-spiral.png"
+                alt="White Spring"
+                className="absolute left-[348px] top-[336px] w-[175px] h-[175px] object-contain z-50 drop-shadow-2xl rotate-12 animate-float-slow"
+              />
+
+            </div>
+
+          </div>
+
+          {/* Right Side: The White Form Card */}
+          <div className="lg:col-span-6 xl:col-span-5 w-full flex justify-center lg:justify-end pb-8">
+            <div className="w-full max-w-[500px] bg-white rounded-[24px] p-8 sm:p-12 shadow-2xl border border-surface-200/50 text-[#242528]">
+              {children}
             </div>
           </div>
 
-          {/* Quick Highlight Stats */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm border border-white/10">
-              <div className="text-2xl font-black text-neon">94%</div>
-              <div className="text-xs text-white/80 font-medium">Placement within 6 mos</div>
-            </div>
-            <div className="bg-white/10 rounded-2xl p-4 backdrop-blur-sm border border-white/10">
-              <div className="text-2xl font-black text-neon">250+</div>
-              <div className="text-xs text-white/80 font-medium">Top tech mentors</div>
-            </div>
-          </div>
         </div>
+      </main>
 
-        {/* Bottom Security / Trust Proof */}
-        <div className="relative z-10 flex items-center gap-2 text-xs text-white/70">
-          <ShieldCheck className="w-4 h-4 text-neon" />
-          <span>Enterprise grade encryption & privacy protection</span>
-        </div>
-      </div>
-
-      {/* Right Form Panel */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 lg:p-16">
-        <div className="w-full max-w-md space-y-8 bg-white p-8 sm:p-10 rounded-3xl shadow-xl shadow-surface-200/50 border border-surface-200/60">
-          {/* Mobile Logo & Back Link */}
-          <div className="flex lg:hidden items-center justify-between mb-4">
-            <Link to="/">
-              <ByteSpaceLogo variant="dark" />
-            </Link>
-            <Link to="/" className="text-xs font-semibold text-brand-600 flex items-center gap-1">
-              <ArrowLeft className="w-3.5 h-3.5" /> Back
-            </Link>
-          </div>
-
-          {/* Form Header */}
-          <div className="text-center sm:text-left space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-surface-900 tracking-tight">
-              {title}
-            </h2>
-            <p className="text-sm text-surface-500">{subtitle}</p>
-          </div>
-
-          {/* Form Body */}
-          {children}
-        </div>
-      </div>
     </div>
   );
 };

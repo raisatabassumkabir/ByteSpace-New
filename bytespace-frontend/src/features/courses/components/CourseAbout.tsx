@@ -9,7 +9,7 @@ export const CourseAbout: React.FC = () => {
     <div className="space-y-10">
       {/* Description Section */}
       <div className="space-y-4">
-        <h3 className="text-xl font-display font-extrabold text-surface-900">
+        <h3 className="text-[15px] sm:text-base font-bold text-surface-900">
           Description
         </h3>
         <div className="space-y-4 text-xs sm:text-sm text-surface-600 leading-relaxed">
@@ -21,7 +21,7 @@ export const CourseAbout: React.FC = () => {
 
       {/* Sneak Peek Gallery */}
       <div className="space-y-4">
-        <h3 className="text-xl font-display font-extrabold text-surface-900">
+        <h3 className="text-[15px] sm:text-base font-bold text-surface-900">
           Sneak Peek
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
@@ -47,7 +47,7 @@ export const CourseAbout: React.FC = () => {
 
       {/* Key Points */}
       <div className="space-y-4">
-        <h3 className="text-xl font-display font-extrabold text-surface-900">
+        <h3 className="text-[15px] sm:text-base font-bold text-surface-900">
           Key Points
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">

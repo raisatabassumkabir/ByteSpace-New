@@ -1,0 +1,119 @@
+  text: Email
+  text: designer@example.com
+  text: Password
+  text: \*\*\*\*\*\*\*\*
+  text: ByteSpace
+  text: 17 Lessons
+  text: 2 hours 16 mins
+  text: 59 Comments
+  text: Build Digital Asset
+  text: by {ts1}purepearl studio{/ts1}
+  text: Beginner
+  text: 26+
+  text: '{ts2}${/ts2}{ts1}25{/ts1}'
+  text: /lifetime
+  text: '{ts3}4.5{/ts3} '
+  text: the Power of Big Data
+  text: Happy Students
+  text: 2K+
+  text: '{ts4}**4.5** {/ts4}{ts5}\(240\){/ts5}'
+  text: Filter
+  text: Level
+  text: Category
+  text: Most relevant
+  text: Home
+  text: Courses
+  text: Creators
+  text: Sign In
+  text: Join Us
+  text: ByteSpace
+  text: Featured
+  text: Music
+  text: Drawing & Painting
+  text: Marketing
+  text: Animation
+  text: Social Media
+  text: UI/UX Design
+  text: Creative Marketing
+  text: Cooking
+  text: 17 Lessons
+  text: 2 hours 16 mins
+  text: 59 Comments
+  text: Learn Figma from Basic
+  text: by {ts1}purepearl studio{/ts1}
+  text: Beginner
+  text: 26+
+  text: $25
+  text: /lifetime
+  text: '{ts3}4.5{/ts3} '
+  text: Build Digital Asset
+  text: the Power of Big Data
+  text: 26+
+  text: Balancing Productivity and Self-Care
+  text: Mastering Money Management
+  text: '4.5 '
+  text: From Idea to Startup Success
+  text: ByteSpace
+  text: Stay Up to date with our latest features and releases by joining our newsletter.
+  text: Enter your email
+  text: 'Search '
+  text: By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+  text: Browse
+  text: Featured Courses
+  text: Featured Categories
+  text: Business
+  text: IT
+  text: Design
+  text: Development
+  text: Marketing
+  text: Photography
+  text: Finance
+  text: Sport
+  text: Platform
+  text: Become a Creator
+  text: Affiliate Program
+  text: Contact
+  text: Help
+  text: About
+  text: '@ 2023 ByteSpace. All rights reserved.'
+  text: Privacy Policy
+  text: Terms of Service
+  text: Cookies Settings
+  text: Reviews
+  text: 'Build Digital Asset: A Comprehensive Guide'
+  text: Unlock the Power of Digital Creation with Expert Guidance
+  text: by {ts6}purepearl studio{/ts6}
+  text: Intermediate
+  text: 4.8 \(172 reviews\)
+  text: 199 Students
+  text: Share
+  text: 112 Lessons \(24 hours\)
+  text: '01'
+  text: Introduction to Digital Assets
+  text: 12 mins
+  text: '02'
+  text: Design Principles for Impacts
+  text: 21 mins
+  text: '03'
+  text: Advanced Techniques in Digital Creation
+  text: 16 mins
+  text: 99 more videos
+  text: Ready to Dive In? Enroll Now and Start Building Your Digital Future!
+  text: $25
+  text: /lifetime
+  text: Enroll Now
+  text: This course include
+  text: Learning Resources
+  text: Quality Lesson Videos
+  text: Certificate of Completion
+  text: Private Consultation
+  text: PurePearl Studio
+  text: Professional Creator
+  text: See Full Profile
+  text: About
+  text: Learning Progress
+  text: UI/UX Designer
+  text: a year ago
+  text: 55%
+  text: 2K+
+  text: +12$

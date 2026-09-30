@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Filter, SlidersHorizontal, ChevronDown, ArrowUpDown } from 'lucide-react';
+import { Filter, BarChart2, Shapes } from 'lucide-react';
 import { mockCreatorCourses } from '../data/mockCreator';
 import { CreatorCourseCard } from './CreatorCourseCard';
 import { cn } from '@/utils/cn';
@@ -31,8 +31,8 @@ export const CreatorCourseGrid: React.FC = () => {
           {/* Left: Filter Buttons */}
           <div className="flex flex-wrap items-center gap-2.5">
             {/* Filter icon button */}
-            <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-surface-200 text-surface-700 text-xs font-bold hover:bg-surface-50 shadow-sm transition-all">
-              <Filter className="w-3.5 h-3.5 text-surface-500" />
+            <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-surface-200 text-surface-700 text-sm font-semibold hover:bg-surface-50 shadow-sm transition-all">
+              <Filter className="w-4 h-4 text-surface-500" />
               <span>Filter</span>
             </button>
 
@@ -40,11 +40,10 @@ export const CreatorCourseGrid: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => setShowLevelMenu(!showLevelMenu)}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-surface-200 text-surface-700 text-xs font-bold hover:bg-surface-50 shadow-sm transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-surface-200 text-surface-700 text-sm font-semibold hover:bg-surface-50 shadow-sm transition-all"
               >
-                <SlidersHorizontal className="w-3.5 h-3.5 text-surface-500" />
-                <span>Level: {selectedLevel}</span>
-                <ChevronDown className="w-3 h-3 text-surface-400" />
+                <BarChart2 className="w-4 h-4 text-surface-500" />
+                <span>Level</span>
               </button>
 
               {showLevelMenu && (
@@ -71,9 +70,9 @@ export const CreatorCourseGrid: React.FC = () => {
             </div>
 
             {/* Category Button */}
-            <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-surface-200 text-surface-700 text-xs font-bold hover:bg-surface-50 shadow-sm transition-all">
+            <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-surface-200 text-surface-700 text-sm font-semibold hover:bg-surface-50 shadow-sm transition-all">
+              <Shapes className="w-4 h-4 text-surface-500" />
               <span>Category</span>
-              <ChevronDown className="w-3 h-3 text-surface-400" />
             </button>
           </div>
 
@@ -81,11 +80,23 @@ export const CreatorCourseGrid: React.FC = () => {
           <div className="relative">
             <button
               onClick={() => setShowSortMenu(!showSortMenu)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-surface-200 text-surface-700 text-xs font-bold hover:bg-surface-50 shadow-sm transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-surface-200 text-surface-700 text-sm font-semibold hover:bg-surface-50 shadow-sm transition-all"
             >
-              <ArrowUpDown className="w-3.5 h-3.5 text-surface-500" />
-              <span>Sort: {sortBy === 'relevant' ? 'Most relevant' : sortBy}</span>
-              <ChevronDown className="w-3 h-3 text-surface-400" />
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="w-4 h-4 text-surface-500"
+              >
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="14" y2="12"></line>
+                <line x1="4" y1="18" x2="8" y2="18"></line>
+              </svg>
+              <span>Most relevant</span>
             </button>
 
             {showSortMenu && (

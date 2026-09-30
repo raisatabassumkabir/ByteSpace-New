@@ -1,45 +1,72 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
-import { SquiggleShape } from '@/assets/illustrations/DecorativeShapes';
 
 export const SecondaryCTA: React.FC = () => {
   return (
-    <section className="relative bg-brand-600 text-white overflow-hidden bg-hero-grid py-20 lg:py-28 border-y border-brand-500/20">
+    <section className="relative bg-brand-600 text-white overflow-hidden bg-hero-grid py-16 lg:py-36 border-y border-brand-500/20">
       
-      {/* Decorative SVGs for the background elements */}
-      {/* Top Left Yellow Squiggle */}
-      <div className="absolute -top-10 -left-10 lg:top-[-20%] lg:left-[-5%] opacity-90 animate-float pointer-events-none drop-shadow-2xl scale-150 rotate-[-15deg]">
-        <SquiggleShape className="w-48 h-20" color="#CCFF00" />
-      </div>
+      {/* Decorative SVGs and Images for the background elements */}
+      
+      {/* Top Left: Huge Neon Spiral & Small White Spring */}
+      <img
+        src="/images/cta-neon-spiral-1.png"
+        alt=""
+        className="absolute -top-16 -left-12 lg:top-[0%] lg:left-[0%] w-24 sm:w-24 lg:w-[300px] animate-float pointer-events-none drop-shadow-2xl z-[5] hidden lg:block"
+      />
+      <img
+        src="/images/white-spiral-1.png"
+        alt=""
+        className="absolute top-[20%] -left-8 lg:top-[10%] lg:left-[10%] w-12 sm:w-12 lg:w-[200px] animate-float-slow pointer-events-none drop-shadow-xl z-[5] -rotate-12 hidden lg:block"
+      />
 
-      {/* Bottom Right Yellow Squiggle */}
-      <div className="absolute -bottom-10 -right-10 lg:bottom-[5%] lg:right-[5%] opacity-90 animate-float-slow pointer-events-none drop-shadow-2xl scale-125 rotate-[15deg]">
-        <SquiggleShape className="w-48 h-20" color="#CCFF00" />
-      </div>
+      {/* Bottom Left: White Cone & Neon Torus */}
+      <img
+        src="/images/cta-white-cone.png"
+        alt=""
+        className="absolute bottom-[10%] -left-8 lg:bottom-[10%] lg:left-[0%] w-16 sm:w-20 lg:w-48 animate-float pointer-events-none drop-shadow-2xl z-[5] hidden lg:block"
+      />
+      <img
+        src="/images/cta-neon-torus.png"
+        alt=""
+        className="absolute -bottom-10 -left-10 lg:-bottom-3 lg:left-[8%] w-24 sm:w-24 lg:w-[450px] animate-float-slow pointer-events-none drop-shadow-2xl z-[5] hidden lg:block"
+      />
 
-      {/* Top Right Yellow Triangle/Cone Simulator */}
-      <div className="absolute top-[10%] right-[10%] lg:right-[15%] w-24 h-24 lg:w-32 lg:h-32 bg-neon rounded-tl-full rounded-br-full rotate-45 opacity-90 animate-float drop-shadow-2xl" />
+      {/* Top Right: Neon Pyramid & Huge White Cylinder */}
+      <img
+        src="/images/cta-neon-pyramid.png"
+        alt=""
+        className="absolute top-[5%] -right-8 lg:top-[5%] lg:right-[15%] w-16 sm:w-16 lg:w-[250px] animate-float-slow pointer-events-none drop-shadow-2xl z-[5] hidden lg:block"
+      />
+      <img
+        src="/images/cta-white-cylinder.png"
+        alt=""
+        className="absolute -top-4 -right-16 lg:-top-35 lg:-right-10 w-24 sm:w-32 lg:w-[320px] animate-float pointer-events-none drop-shadow-2xl z-[5] hidden lg:block"
+      />
 
-      {/* Bottom Left White Cone Simulator */}
-      <div className="absolute bottom-[10%] left-[5%] lg:left-[10%] w-20 h-20 lg:w-28 lg:h-28 bg-white rounded-tr-full rounded-bl-full -rotate-12 opacity-90 animate-float-slow drop-shadow-2xl" />
+      {/* Bottom Right: Neon Spring */}
+      <img
+        src="/images/cta-neon-spiral-2.png"
+        alt=""
+        className="absolute -bottom-4 -right-10 lg:-bottom-[2%] lg:right-[5%] w-20 sm:w-20 lg:w-[350px] animate-float pointer-events-none drop-shadow-2xl z-[5] hidden lg:block"
+      />
 
-      <div className="relative max-w-5xl mx-auto px-6 text-center space-y-6">
+      <div className="relative max-w-5xl mx-auto px-6 text-center z-10">
         
-        <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-display font-bold tracking-tight leading-tight max-w-3xl mx-auto drop-shadow-sm">
-          Unlock Your Potential as a<br />Creator with ByteSpace
+        <h2 className="text-[32px] sm:text-[40px] lg:text-[46px] font-display font-bold tracking-tight leading-[1.2] max-w-3xl mx-auto drop-shadow-sm text-balance">
+          Unlock Your Potential as a Creator with ByteSpace
         </h2>
 
-        <p className="text-[13px] sm:text-sm lg:text-[15px] text-white/95 max-w-[850px] mx-auto font-normal leading-relaxed">
+        <p className="mt-8 lg:mt-12 text-[14px] sm:text-[15px] lg:text-[16px] text-white/90 max-w-[964px] mx-auto font-normal leading-[1.8] sm:leading-[2] lg:leading-[2.2]">
           Experience the collaboration of numerous creators and an expanding selection of courses. Register now and become a part of a community comprising over 10,000 local and international creators. Utilize our Course Editor, and showcase your expertise by publishing your finest course on the ByteSpace Course Library.
         </p>
 
-        <div className="flex items-center justify-center pt-6">
+        <div className="flex items-center justify-center pt-10 lg:pt-14">
           <Link to="/register">
             <Button
               variant="neon"
               size="lg"
-              className="font-bold px-10 py-6 text-base shadow-neon hover:shadow-neon-lg text-slate-900 rounded-full hover:scale-105 transition-transform"
+              className="font-bold px-10 py-6 text-base shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-slate-900 rounded-full"
             >
               Join as Creator
             </Button>

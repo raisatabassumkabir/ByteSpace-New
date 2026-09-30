@@ -25,7 +25,7 @@ export const CourseReviews: React.FC = () => {
     <div className="space-y-10">
       {/* Header Description */}
       <div className="space-y-2">
-        <h3 className="text-xl font-display font-extrabold text-surface-900">
+        <h3 className="text-[15px] sm:text-base font-bold text-surface-900">
           What Learners Are Saying
         </h3>
         <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
@@ -43,9 +43,9 @@ export const CourseReviews: React.FC = () => {
           <span className="text-4xl sm:text-5xl font-display font-black leading-none my-1">
             {reviewsData.aggregateRating.toFixed(1)}
           </span>
-          <div className="flex items-center gap-0.5 text-surface-900 pt-1">
+          <div className="flex items-center gap-0.5 text-black pt-1">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-3.5 h-3.5 fill-surface-900 text-surface-900" />
+              <Star key={i} className="w-3.5 h-3.5 fill-black text-black" />
             ))}
           </div>
         </div>
@@ -69,7 +69,7 @@ export const CourseReviews: React.FC = () => {
                     key={i}
                     className={cn(
                       'w-3 h-3',
-                      i < item.stars ? 'fill-surface-800 text-surface-800' : 'text-surface-200'
+                      i < item.stars ? 'fill-black text-black' : 'text-surface-200'
                     )}
                   />
                 ))}
@@ -86,7 +86,7 @@ export const CourseReviews: React.FC = () => {
 
       {/* Individual Reviews Section */}
       <div className="space-y-6">
-        <h4 className="text-sm font-bold uppercase tracking-wider text-surface-900">
+        <h4 className="text-[15px] font-bold text-surface-900">
           Individual Reviews:
         </h4>
 
@@ -142,15 +142,15 @@ export const CourseReviews: React.FC = () => {
                 </div>
 
                 {/* Stars */}
-                <div className="flex items-center gap-0.5 text-surface-800">
+                <div className="flex items-center gap-0.5 text-black">
                   {[...Array(rev.rating)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-surface-800 text-surface-800" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-black text-black" />
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-xs sm:text-sm text-surface-600 leading-relaxed font-normal">
-                  "{rev.comment}"
+                <p className="text-xs sm:text-sm text-surface-700 leading-relaxed">
+                  {rev.comment}
                 </p>
               </div>
             ))

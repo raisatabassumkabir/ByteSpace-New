@@ -63,10 +63,10 @@ export const SpringRibbon: React.FC<{ className?: string }> = ({
 /* 3D Stylized Geometric Shapes from Figma Home Hero Reference */
 
 export const Neon3DSpring: React.FC<{ className?: string }> = ({
-  className = 'w-32 h-48',
+  className = 'w-24 h-40',
 }) => (
   <svg
-    viewBox="0 0 120 180"
+    viewBox="0 0 120 230"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
@@ -83,9 +83,9 @@ export const Neon3DSpring: React.FC<{ className?: string }> = ({
       </filter>
     </defs>
     <path
-      d="M30 20 C60 10, 100 25, 95 50 C90 75, 25 70, 25 95 C25 120, 95 115, 90 140 C85 165, 30 160, 20 170"
+      d="M30 20 C60 10, 100 25, 95 45 C90 65, 25 60, 25 80 C25 100, 95 95, 90 115 C85 135, 25 130, 25 150 C25 170, 95 165, 90 185 C85 205, 30 200, 20 215"
       stroke="url(#neonSpringGrad)"
-      strokeWidth="24"
+      strokeWidth="26"
       strokeLinecap="round"
       filter="url(#neonShadow)"
     />

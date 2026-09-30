@@ -1,198 +1,99 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ByteSpaceLogo } from '@/assets/icons/ByteSpaceLogo';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      setSubscribed(true);
       setEmail('');
     }
   };
 
   return (
-    <footer className="bg-white border-t border-surface-200 pt-16 pb-12">
+    <footer className="bg-white pt-16 pb-8 border-t border-surface-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
-          {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-5">
-            <Link to="/" className="inline-block">
+        
+        {/* Top Section: Newsletter (Left) and Links (Right) */}
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-20">
+          
+          {/* Left Column: Brand & Newsletter */}
+          <div className="flex-1 max-w-md space-y-6">
+            <Link to="/" className="inline-block mb-2">
               <ByteSpaceLogo variant="dark" />
             </Link>
-            <p className="text-surface-500 text-sm leading-relaxed max-w-sm">
-              Empowering the next generation of engineers, designers, and innovators with masterclasses led by industry pioneers.
+            
+            <p className="text-sm text-surface-600 font-medium">
+              Stay Up to date with our latest features and releases by joining our newsletter.
             </p>
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-surface-100 flex items-center justify-center text-surface-600 hover:bg-neon hover:text-surface-900 transition-colors"
-                aria-label="Twitter"
+            
+            <form onSubmit={handleSubscribe} className="flex items-center gap-3 w-full">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 px-5 py-3 rounded-full border border-surface-200 text-sm focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all placeholder:text-surface-400"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-neon hover:bg-neon-hover text-slate-900 font-medium px-8 py-3 rounded-full text-sm transition-colors shrink-0"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-surface-100 flex items-center justify-center text-surface-600 hover:bg-neon hover:text-surface-900 transition-colors"
-                aria-label="GitHub"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-surface-100 flex items-center justify-center text-surface-600 hover:bg-neon hover:text-surface-900 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
+                Search
+              </button>
+            </form>
+            
+            <p className="text-[10px] text-surface-500 leading-relaxed max-w-sm">
+              By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+            </p>
+          </div>
+
+          {/* Right Column: Links Grid */}
+          <div className="flex-[1.5] grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
+            {/* Column 1 */}
+            <div className="space-y-4">
+              <Link to="#courses" className="block text-surface-600 hover:text-brand-600">Featured Courses</Link>
+              <Link to="#categories" className="block text-surface-600 hover:text-brand-600">Featured Categories</Link>
+              <Link to="#business" className="block text-surface-600 hover:text-brand-600">Business</Link>
+              <Link to="#it" className="block text-surface-600 hover:text-brand-600">IT</Link>
+              <Link to="#design" className="block text-surface-600 hover:text-brand-600">Design</Link>
+            </div>
+            
+            {/* Column 2 */}
+            <div className="space-y-4">
+              <Link to="#development" className="block text-surface-600 hover:text-brand-600">Development</Link>
+              <Link to="#marketing" className="block text-surface-600 hover:text-brand-600">Marketing</Link>
+              <Link to="#photography" className="block text-surface-600 hover:text-brand-600">Photography</Link>
+              <Link to="#finance" className="block text-surface-600 hover:text-brand-600">Finance</Link>
+              <Link to="#sport" className="block text-surface-600 hover:text-brand-600">Sport</Link>
+            </div>
+            
+            {/* Column 3 */}
+            <div className="space-y-4">
+              <Link to="#creator" className="block text-surface-600 hover:text-brand-600">Become a Creator</Link>
+              <Link to="#affiliate" className="block text-surface-600 hover:text-brand-600">Affiliate Program</Link>
+              <Link to="#contact" className="block text-surface-600 hover:text-brand-600">Contact</Link>
+              <Link to="#help" className="block text-surface-600 hover:text-brand-600">Help</Link>
+              <Link to="#about" className="block text-surface-600 hover:text-brand-600">About</Link>
             </div>
           </div>
-
-          {/* Quick Links: Courses */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-surface-900">
-              Popular Tracks
-            </h4>
-            <ul className="space-y-2.5 text-sm text-surface-600">
-              <li>
-                <a href="#courses" className="hover:text-brand-600 transition-colors">
-                  Web Development
-                </a>
-              </li>
-              <li>
-                <a href="#courses" className="hover:text-brand-600 transition-colors">
-                  UI/UX Design Systems
-                </a>
-              </li>
-              <li>
-                <a href="#courses" className="hover:text-brand-600 transition-colors">
-                  AI & Machine Learning
-                </a>
-              </li>
-              <li>
-                <a href="#courses" className="hover:text-brand-600 transition-colors">
-                  Growth Marketing
-                </a>
-              </li>
-              <li>
-                <a href="#courses" className="hover:text-brand-600 transition-colors">
-                  Product Management
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Links: Company */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-surface-900">
-              Company
-            </h4>
-            <ul className="space-y-2.5 text-sm text-surface-600">
-              <li>
-                <a href="#about" className="hover:text-brand-600 transition-colors">
-                  About ByteSpace
-                </a>
-              </li>
-              <li>
-                <a href="#mentors" className="hover:text-brand-600 transition-colors">
-                  Become a Mentor
-                </a>
-              </li>
-              <li>
-                <a href="#careers" className="hover:text-brand-600 transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#affiliates" className="hover:text-brand-600 transition-colors">
-                  Affiliate Program
-                </a>
-              </li>
-              <li>
-                <a href="#press" className="hover:text-brand-600 transition-colors">
-                  Press & Media Kit
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter Column */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-surface-900">
-              Stay in the Loop
-            </h4>
-            <p className="text-xs text-surface-500 leading-relaxed">
-              Subscribe to get curated course releases, free cheat-sheets, and member discounts.
-            </p>
-            {subscribed ? (
-              <div className="flex items-center gap-2 p-3 bg-neon/20 text-surface-900 rounded-xl text-xs font-semibold">
-                <CheckCircle2 className="w-4 h-4 text-brand-600" />
-                <span>You're subscribed! Check your inbox.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="space-y-2">
-                <div className="flex rounded-xl overflow-hidden border border-surface-200 focus-within:border-brand-600 focus-within:ring-2 focus-within:ring-brand-600/10 transition-all">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full px-3.5 py-2.5 text-xs text-surface-900 bg-white placeholder:text-surface-400 focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-neon hover:bg-neon-hover px-3.5 flex items-center justify-center text-surface-900 font-bold transition-colors"
-                    aria-label="Submit newsletter subscription"
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-surface-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-surface-500">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>ByteSpace Learning Network v2.4 • All Systems Operational</span>
+        {/* Bottom Section: Copyright & Legal */}
+        <div className="pt-8 border-t border-surface-200 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-surface-500">
+          <div>
+            @ 2023 ByteSpace. All rights reserved.
           </div>
-
           <div className="flex items-center gap-6">
-            <a href="#privacy" className="hover:text-surface-800 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#terms" className="hover:text-surface-800 transition-colors">
-              Terms of Service
-            </a>
-            <a href="#cookies" className="hover:text-surface-800 transition-colors">
-              Security
-            </a>
-            <span>© 2024 ByteSpace, Inc.</span>
+            <Link to="#privacy" className="hover:text-surface-900 transition-colors">Privacy Policy</Link>
+            <Link to="#terms" className="hover:text-surface-900 transition-colors">Terms of Service</Link>
+            <Link to="#cookies" className="hover:text-surface-900 transition-colors">Cookies Settings</Link>
           </div>
         </div>
+        
       </div>
     </footer>
   );

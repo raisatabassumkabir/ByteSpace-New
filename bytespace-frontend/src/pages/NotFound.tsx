@@ -24,17 +24,17 @@ export const NotFound: React.FC = () => {
         </div>
 
         <div className="relative max-w-lg mx-auto text-center space-y-6">
-          {/* Giant "404" with linear gradient fill from neon green to blue */}
-          <div className="text-8xl sm:text-9xl md:text-[10rem] font-display font-black tracking-tight leading-none bg-gradient-to-r from-neon via-[#9bf00b] to-[#60a5fa] bg-clip-text text-transparent select-none drop-shadow-sm">
+          {/* Giant "404" with vertical linear gradient from electric lime fading down matching Figma */}
+          <div className="text-8xl sm:text-9xl md:text-[12rem] font-display font-semibold tracking-tight leading-none bg-gradient-to-b from-[#D4FB20] via-[#D4FB20]/90 to-[#D4FB20]/20 bg-clip-text text-transparent select-none drop-shadow-sm">
             404
           </div>
 
           <div className="space-y-2">
-            <h1 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
-              The page you are looking for doesn't exist
+            <h1 className="text-2xl sm:text-3xl font-display font-semibold text-white tracking-tight">
+              The page you are looking for doesn’t exist
             </h1>
-            <p className="text-xs sm:text-sm text-white/70 max-w-sm mx-auto">
-              Please check the URL or return back to discover our curated courses and creator programs.
+            <p className="text-xs sm:text-sm text-[#E5E6E8] max-w-sm mx-auto leading-relaxed">
+              Try to use a correct url or go back to homepage to start again
             </p>
           </div>
 
@@ -43,8 +43,8 @@ export const NotFound: React.FC = () => {
               <Button
                 variant="neon"
                 size="lg"
-                className="font-bold px-8 shadow-neon hover:shadow-neon-lg"
-                leftIcon={<HomeIcon className="w-4 h-4 text-surface-900" />}
+                className="font-bold px-8 py-3 rounded-full text-slate-950 bg-[#D4FB20] hover:bg-[#b5d915] shadow-lg shadow-black/10 transition-all duration-200"
+                leftIcon={<HomeIcon className="w-4 h-4 text-slate-950" />}
               >
                 Back to Home
               </Button>
