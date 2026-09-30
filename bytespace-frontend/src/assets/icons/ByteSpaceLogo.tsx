@@ -15,7 +15,7 @@ export const ByteSpaceLogo: React.FC<ByteSpaceLogoProps> = ({
   const textColor = isDark ? 'text-[#040819]' : 'text-[#F5F5F6]';
 
   return (
-    <div className={`inline-flex items-end gap-[9px] select-none ${className}`}>
+    <div className={`inline-flex items-center gap-[9px] select-none ${className}`}>
       {/* Exact Stylized 'b' Brand Icon from User Uploaded Spec */}
       <img
         src="/images/bytespace-b-mark.png"
