@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import { Search, Star } from 'lucide-react';
-import {
-  Neon3DSpring,
-  White3DSpring,
-  White3DTorus,
-  White3DPyramid,
-  Neon3DCylinder,
-} from '@/assets/illustrations/DecorativeShapes';
+import { useNavigate } from 'react-router-dom';
 import { useUIStore } from '@/store';
 
 export const Hero: React.FC = () => {
   const { searchQuery, setSearchQuery } = useUIStore();
   const [localQuery, setLocalQuery] = useState(searchQuery);
+  const navigate = useNavigate();
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSearchQuery(localQuery);
-    const element = document.getElementById('courses');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    
+    if (localQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(localQuery)}`);
+    } else {
+      navigate('/search');
     }
   };
 
@@ -26,28 +23,28 @@ export const Hero: React.FC = () => {
     <section className="relative w-full overflow-hidden bg-brand-600 bg-hero-grid text-white pt-4 md:pt-8 pb-0">
       {/* 3D Abstract Shapes pinned to far screen edges */}
       {/* 1. Top Left Neon Spring */}
-      <div className="absolute -left-10 lg:-left-20 top-[15%] lg:top-[12%] pointer-events-none z-10 hidden sm:block -rotate-45 animate-float-slow">
-        <Neon3DSpring className="w-32 sm:w-40 lg:w-56 h-auto drop-shadow-2xl" />
+      <div className="absolute -left-10 lg:-left-[5%] top-[15%] lg:top-[-5%] pointer-events-none z-10 hidden sm:block animate-float-slow">
+        <img src="/images/neon-spiral.png" alt="Neon Spiral" className="w-48 sm:w-64 lg:w-[450px] h-auto drop-shadow-2xl object-contain" />
       </div>
       {/* 2. Mid Left White Spring */}
-      <div className="absolute left-[8%] lg:left-[16%] top-[45%] pointer-events-none z-10 hidden md:block rotate-[30deg] animate-float">
-        <White3DSpring className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-xl" />
+      <div className="absolute left-[8%] lg:left-[16%] top-[20%] pointer-events-none z-10 hidden md:block animate-float">
+        <img src="/images/white-spiral-1.png" alt="White Spiral" className="w-20 sm:w-24 lg:w-[220px] h-auto drop-shadow-xl object-contain" />
       </div>
       {/* 3. Bottom Left White Torus */}
-      <div className="absolute -left-12 lg:-left-24 bottom-[-5%] sm:bottom-0 lg:bottom-[2%] pointer-events-none z-10 hidden sm:block -rotate-[15deg] animate-float">
-        <White3DTorus className="w-48 sm:w-56 lg:w-[320px] h-auto drop-shadow-2xl" />
+      <div className="absolute -left-0 lg:-left-[-8%] bottom-[-5%] sm:bottom-0 lg:bottom-[2%] pointer-events-none z-30 hidden sm:block animate-float">
+        <img src="/images/hero-white-torus.png" alt="White Torus" className="w-48 sm:w-56 lg:w-[380px] h-auto drop-shadow-2xl object-contain" />
       </div>
       {/* 4. Top Right Neon Cylinder */}
-      <div className="absolute -right-10 lg:-right-20 top-[15%] lg:top-[10%] pointer-events-none z-10 hidden sm:block rotate-[25deg] animate-float-slow">
-        <Neon3DCylinder className="w-32 sm:w-44 lg:w-64 h-auto drop-shadow-2xl" />
+      <div className="absolute -right-10 lg:-right-[9%] top-[15%] lg:top-[2%] pointer-events-none z-10 hidden sm:block animate-float-slow">
+        <img src="/images/neon-cylinder.png" alt="Neon Cylinder" className="w-48 sm:w-64 lg:w-[400px] h-auto drop-shadow-2xl object-contain" />
       </div>
       {/* 5. Mid Right White Pyramid */}
-      <div className="absolute right-[8%] lg:right-[15%] top-[40%] pointer-events-none z-10 hidden md:block -rotate-[30deg] animate-float">
-        <White3DPyramid className="w-24 sm:w-28 lg:w-36 h-auto drop-shadow-xl" />
+      <div className="absolute right-[8%] lg:right-[12%] top-[40%] lg:top-[30%] pointer-events-none z-10 hidden md:block animate-float">
+        <img src="/images/white-pyramid.png" alt="White Pyramid" className="w-32 sm:w-40 lg:w-[220px] h-auto drop-shadow-xl object-contain rotate-[3deg]" />
       </div>
       {/* 6. Bottom Right White Spring */}
-      <div className="absolute -right-4 lg:-right-8 bottom-[5%] lg:bottom-[10%] pointer-events-none z-10 hidden sm:block rotate-[60deg] animate-float">
-        <White3DSpring className="w-32 sm:w-40 lg:w-52 h-auto drop-shadow-2xl" />
+      <div className="absolute -right-4 lg:-right-[-10%] bottom-[5%] lg:bottom-[0%] pointer-events-none z-30 hidden sm:block animate-float">
+        <img src="/images/white-spiral-2.png" alt="White Spiral" className="w-32 sm:w-40 lg:w-[380px] h-auto drop-shadow-2xl object-contain" />
       </div>
 
       {/* Main Content & Search */}
@@ -64,19 +61,21 @@ export const Hero: React.FC = () => {
 
         <form
           onSubmit={handleSearchSubmit}
-          className="mt-6 max-w-xl mx-auto bg-white rounded-full p-2 pl-6 flex items-center shadow-2xl border border-white/60 focus-within:ring-2 focus-within:ring-neon transition-all"
+          className="mt-6 max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-3 justify-center"
         >
-          <Search className="w-5 h-5 text-slate-400 shrink-0 mr-3" />
-          <input
-            type="text"
-            placeholder="Course, topic, creator"
-            value={localQuery}
-            onChange={(e) => setLocalQuery(e.target.value)}
-            className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
-          />
+          <div className="flex flex-1 items-center w-full bg-white rounded-full px-6 py-3.5 shadow-2xl focus-within:ring-2 focus-within:ring-neon transition-all">
+            <Search className="w-5 h-5 text-slate-400 shrink-0 mr-3" />
+            <input
+              type="text"
+              placeholder="Course, topic, creator"
+              value={localQuery}
+              onChange={(e) => setLocalQuery(e.target.value)}
+              className="w-full bg-transparent text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
+            />
+          </div>
           <button
             type="submit"
-            className="bg-neon hover:bg-[#b8e600] text-slate-950 font-bold text-sm px-7 py-2.5 rounded-full transition-all active:scale-95 shadow-sm shrink-0"
+            className="bg-neon hover:bg-[#b8e600] text-slate-950 font-bold text-base px-8 py-3.5 rounded-full shadow-2xl transition-all active:scale-95 shrink-0 w-full sm:w-auto"
           >
             Search
           </button>
@@ -89,11 +88,13 @@ export const Hero: React.FC = () => {
         <div className="relative w-full max-w-5xl mx-auto mt-6 sm:mt-8 h-[280px] sm:h-[350px] md:h-[440px] lg:h-[580px] xl:h-[620px] overflow-visible">
 
           {/*
-           * 2. THE GREEN CIRCLE — Natively a Half-Circle.
-           *    - using rounded-t-full and exactly half the height of the width
+           * 2. THE GREEN CIRCLE ARCH — Natively a Half-Ring (SVG).
+           *    - using an SVG path to perfectly render the donut shape across all browsers
            *    - sits completely flush on bottom-0 with zero overflow or clipping needed
            */}
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] sm:bottom-[-30px] md:bottom-[-40px] lg:bottom-[-50px] xl:bottom-[-60px] w-[600px] h-[280px] sm:w-[730px] sm:h-[350px] md:w-[900px] md:h-[440px] lg:w-[1160px] lg:h-[580px] xl:w-[1260px] xl:h-[620px] rounded-t-full rounded-b-none bg-[#ccff00] shadow-[0_0_100px_rgba(204,255,0,0.30)] z-0" />
+          <svg viewBox="0 0 100 50" preserveAspectRatio="none" className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] sm:bottom-[-30px] md:bottom-[-40px] lg:bottom-[-50px] xl:bottom-[-60px] w-[600px] h-[280px] sm:w-[730px] sm:h-[350px] md:w-[900px] md:h-[440px] lg:w-[1160px] lg:h-[580px] xl:w-[1260px] xl:h-[620px] z-0 drop-shadow-[0_0_80px_rgba(204,255,0,0.30)]">
+            <path d="M 0 50 A 50 50 0 0 1 100 50 L 70 50 A 20 20 0 0 0 30 50 Z" fill="#ccff00" />
+          </svg>
 
           {/*
            * 3. THE BOY IMAGE
@@ -103,7 +104,7 @@ export const Hero: React.FC = () => {
           <img
             src="/images/student-hero-portrait.png"
             alt="ByteSpace student smiling with headphones and laptop"
-            className="absolute left-1/2 -translate-x-1/2 bottom-[-90px] sm:bottom-[-90px] md:bottom-[-120px] lg:bottom-[-150px] xl:bottom-[-180px] z-10 h-[400px] sm:h-[480px] md:h-[600px] lg:h-[780px] xl:h-[840px] w-auto max-w-none object-contain object-bottom pointer-events-auto"
+            className="absolute left-1/2 -translate-x-[46%] bottom-[-90px] sm:bottom-[-90px] md:bottom-[-120px] lg:bottom-[-150px] xl:bottom-[-180px] z-10 h-[400px] sm:h-[480px] md:h-[600px] lg:h-[780px] xl:h-[840px] w-auto max-w-none object-contain object-bottom pointer-events-auto"
             loading="eager"
           />
 
