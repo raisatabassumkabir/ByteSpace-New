@@ -6,6 +6,7 @@ const paths = [
   { name: 'IT & Software', image: '/images/learning-paths/path-it.png' },
   { name: 'Business', image: '/images/learning-paths/path-business.png' },
   { name: 'Marketing', image: '/images/learning-paths/path-marketing.png' },
+  { name: 'Photography', image: '/images/learning-paths/path-photography.png' },
 ];
 
 export const LearningPaths: React.FC = () => {
@@ -23,7 +24,7 @@ export const LearningPaths: React.FC = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-12 w-full max-w-6xl mx-auto px-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-12 lg:gap-10 w-full max-w-7xl mx-auto px-2">
           {paths.map((path) => (
             <button
               key={path.name}
