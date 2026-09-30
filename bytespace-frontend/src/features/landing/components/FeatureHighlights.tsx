@@ -138,6 +138,33 @@ export const FeatureHighlights: React.FC = () => {
                   <div className="text-[26px] font-bold text-white mt-1.5 tracking-tight">$1,200.38</div>
                 </div>
               </div>
+
+              {/* Happy Students Card (Mobile) */}
+              <div className="relative z-20 mt-3 px-4 w-full max-w-sm mx-auto">
+                <div className="bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-[24px] p-5 text-left w-full">
+                  <h4 className="text-slate-900 font-medium text-[15px] tracking-tight">
+                    Happy Students
+                  </h4>
+                  <div className="flex items-center justify-start gap-1.5 text-[14px] font-medium mt-0.5">
+                    <span className="text-slate-700">4.5</span>
+                    <span className="text-slate-400 font-normal">(240)</span>
+                    <Star className="w-4 h-4 fill-[#CCFF00] text-[#CCFF00] inline -mt-0.5" />
+                  </div>
+                  {/* Overlapping Avatar Stack */}
+                  <div className="flex items-center justify-start mt-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Student 1" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Student 2" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm -ml-3 sm:-ml-3.5 relative z-[1]" />
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Student 3" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm -ml-3 sm:-ml-3.5 relative z-[2]" />
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Student 4" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm -ml-3 sm:-ml-3.5 relative z-[3]" />
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="Student 5" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm -ml-3 sm:-ml-3.5 relative z-[4]" />
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" alt="Student 6" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm -ml-3 sm:-ml-3.5 relative z-[5]" />
+                    <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80" alt="Student 7" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shadow-sm -ml-3 sm:-ml-3.5 relative z-[6]" />
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#CCFF00] text-slate-900 font-bold text-[10px] sm:text-xs flex items-center justify-center -ml-3 sm:-ml-3.5 relative z-[7] shadow-sm">
+                      2K+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
