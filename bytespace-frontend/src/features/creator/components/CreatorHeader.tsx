@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { Package, Users, Check, UserPlus } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { mockCreatorData } from '../data/mockCreator';
-import { SparkleShape } from '@/assets/illustrations/DecorativeShapes';
 
 export const CreatorHeader: React.FC = () => {
   const [isFollowing, setIsFollowing] = useState(false);

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Share2, Star, Users, BarChart2, Play, Check } from 'lucide-react';
+import { Share2, Star, Users, BarChart2, Check } from 'lucide-react';
 import { courseDetailsData } from '../data/courseDetailsData';
-import { SparkleShape } from '@/assets/illustrations/DecorativeShapes';
 
 export const CourseHeader: React.FC = () => {
   const [copied, setCopied] = useState(false);

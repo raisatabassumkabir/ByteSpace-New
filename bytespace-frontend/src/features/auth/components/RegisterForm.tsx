@@ -1,37 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { User as UserIcon, Mail, Lock, AlertCircle } from 'lucide-react';
-import { Input } from '@/components/ui/Input';
-import { Button } from '@/components/ui/Button';
-import { SocialLoginButtons } from './SocialLoginButtons';
+import { AlertCircle } from 'lucide-react';
 import { useRegister } from '../hooks/useRegister';
-import { useAuth } from '../hooks/useAuth';
 
 export const RegisterForm: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [agreeToTerms, setAgreeToTerms] = useState(false);
 
   const { isLoading, error, validationErrors, handleRegister } = useRegister();
-  const { handleSocialLogin } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await handleRegister({ name, email, password, agreeToTerms });
+    await handleRegister({ name, email, password, agreeToTerms: true });
   };
 
   return (
-    <div className="space-y-6">
-      {/* Social Registration */}
-      <SocialLoginButtons onSocialLogin={handleSocialLogin} isLoading={isLoading} />
-
-      {/* Divider */}
-      <div className="relative flex items-center justify-center">
-        <div className="w-full border-t border-surface-200" />
-        <span className="bg-white px-3 text-xs uppercase tracking-wider text-surface-400 font-semibold absolute">
-          or register with email
+    <div className="space-y-8">
+      {/* Eyebrow & Title verbatim from Figma #2007:305, #2007:306 */}
+      <div className="space-y-1">
+        <span className="text-[18px] font-normal text-[#003BE2] block">
+          Create an Account
         </span>
+        <h2 className="text-[36px] sm:text-[44px] font-display font-semibold text-[#242528] tracking-tight leading-tight">
+          Welcome to ByteSpace
+        </h2>
       </div>
 
       {/* Server Error Alert */}
@@ -42,86 +35,79 @@ export const RegisterForm: React.FC = () => {
         </div>
       )}
 
-      {/* Form Fields */}
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <Input
-          label="Full Name"
-          type="text"
-          placeholder="e.g. Alex Morgan"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          leftIcon={<UserIcon className="w-4 h-4" />}
-          error={validationErrors.name}
-          required
-        />
-
-        <Input
-          label="Work or Personal Email"
-          type="email"
-          placeholder="alex@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          leftIcon={<Mail className="w-4 h-4" />}
-          error={validationErrors.email}
-          required
-        />
-
-        <Input
-          label="Create Password"
-          type="password"
-          placeholder="Minimum 8 characters"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          leftIcon={<Lock className="w-4 h-4" />}
-          error={validationErrors.password}
-          helperText="Include at least one number or special character"
-          required
-        />
-
-        {/* Terms Checkbox */}
-        <div className="pt-1">
-          <label className="flex items-start gap-2.5 text-xs text-surface-600 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={agreeToTerms}
-              onChange={(e) => setAgreeToTerms(e.target.checked)}
-              className="mt-0.5 rounded border-surface-300 text-brand-600 focus:ring-brand-500 w-4 h-4"
-              required
-            />
-            <span>
-              I agree to ByteSpace's{' '}
-              <a href="#terms" className="text-brand-600 font-semibold hover:underline">
-                Terms of Service
-              </a>{' '}
-              and{' '}
-              <a href="#privacy" className="text-brand-600 font-semibold hover:underline">
-                Privacy Policy
-              </a>
-              .
-            </span>
+      {/* Form Fields matching Figma Labels & Placeholders verbatim */}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Full Name */}
+        <div className="space-y-2">
+          <label className="block text-[14px] font-medium text-[#242528]">
+            Full Name
           </label>
-          {validationErrors.agreeToTerms && (
-            <p className="mt-1 text-xs text-red-500 font-medium">{validationErrors.agreeToTerms}</p>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Jamie Davis"
+            required
+            className="w-full h-[52px] px-6 rounded-[12px] border border-[#CED0D3] bg-white text-[16px] text-[#242528] placeholder:text-[#82868E] focus:outline-none focus:border-[#003BE2] focus:ring-1 focus:ring-[#003BE2] transition-all"
+          />
+          {validationErrors.name && (
+            <p className="text-xs text-red-500 mt-1">{validationErrors.name}</p>
           )}
         </div>
 
-        {/* Submit Button */}
-        <Button
-          type="submit"
-          variant="neon"
-          size="lg"
-          isLoading={isLoading}
-          className="w-full font-bold text-sm tracking-wide mt-2"
-        >
-          Create Free Account
-        </Button>
+        {/* Email */}
+        <div className="space-y-2">
+          <label className="block text-[14px] font-medium text-[#242528]">
+            Email
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="designer@example.com"
+            required
+            className="w-full h-[52px] px-6 rounded-[12px] border border-[#CED0D3] bg-white text-[16px] text-[#242528] placeholder:text-[#82868E] focus:outline-none focus:border-[#003BE2] focus:ring-1 focus:ring-[#003BE2] transition-all"
+          />
+          {validationErrors.email && (
+            <p className="text-xs text-red-500 mt-1">{validationErrors.email}</p>
+          )}
+        </div>
+
+        {/* Password */}
+        <div className="space-y-2">
+          <label className="block text-[14px] font-medium text-[#242528]">
+            Password
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="********"
+            required
+            className="w-full h-[52px] px-6 rounded-[12px] border border-[#CED0D3] bg-white text-[16px] text-[#242528] placeholder:text-[#82868E] focus:outline-none focus:border-[#003BE2] focus:ring-1 focus:ring-[#003BE2] transition-all font-mono"
+          />
+          {validationErrors.password && (
+            <p className="text-xs text-red-500 mt-1">{validationErrors.password}</p>
+          )}
+        </div>
+
+        {/* Continue Button in Electric Lime #D4FB20 verbatim from Figma (alignItems: flex-end, padding: 12px 24px) */}
+        <div className="flex justify-end pt-2 w-full">
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full sm:w-auto px-8 py-3 rounded-[24px] bg-[#D4FB20] hover:bg-[#c2ea0f] text-[#242528] font-medium text-[18px] tracking-normal transition-all duration-200 hover:-translate-y-0.5 active:scale-98 disabled:opacity-50 shadow-sm cursor-pointer flex items-center justify-center"
+          >
+            {isLoading ? 'Creating Account...' : 'Continue'}
+          </button>
+        </div>
       </form>
 
-      {/* Redirect Footer */}
-      <div className="text-center text-xs text-surface-500 pt-2">
+      {/* Redirect Footer verbatim from Figma #2007:322 */}
+      <div className="text-center text-[16px] text-[#4B4C53] pt-4">
         <span>Already have an account? </span>
-        <Link to="/login" className="font-bold text-brand-600 hover:text-brand-700 hover:underline">
-          Sign In
+        <Link to="/login" className="font-medium text-[#003BE2] hover:underline">
+          Login
         </Link>
       </div>
     </div>

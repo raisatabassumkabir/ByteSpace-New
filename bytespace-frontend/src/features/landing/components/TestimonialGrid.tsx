@@ -72,7 +72,7 @@ export const TestimonialGrid: React.FC = () => {
                 <h4 className="font-bold text-[18px] lg:text-[20px] text-slate-900 leading-snug">
                   {t.name}
                 </h4>
-                <p className="text-[14px] text-blue-500 font-light mt-1">
+                <p className="text-[14px] text-[#003BE2] font-medium mt-1">
                   {t.role}
                 </p>
               </div>

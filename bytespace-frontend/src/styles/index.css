@@ -15,6 +15,7 @@
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: #0f172a;
     background-color: #f8fafc;
+    overflow-x: hidden;
   }
 
   body {

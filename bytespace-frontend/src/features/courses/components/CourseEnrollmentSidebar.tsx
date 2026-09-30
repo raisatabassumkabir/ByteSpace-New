@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Video, Award, MessageSquare, Check, ArrowRight } from 'lucide-react';
+import { BookOpen, Video, Award, MessageSquare, Check } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { courseDetailsData } from '../data/courseDetailsData';
 

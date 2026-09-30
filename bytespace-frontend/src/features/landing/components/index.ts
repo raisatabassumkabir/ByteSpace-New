@@ -4,3 +4,4 @@ export * from './FeatureHighlights';
 export * from './SecondaryCTA';
 export * from './TestimonialGrid';
 export * from './LearningPaths';
+export * from './LogoPartner';

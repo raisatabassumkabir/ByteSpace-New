@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'transparent-on-blue' 
   const scrollY = useScrollPosition();
   const location = useLocation();
   const { user, isAuthenticated, logout } = useAuthStore();
-  const { isMobileMenuOpen, toggleMobileMenu, bookmarkedCourseIds } = useUIStore();
+  const { isMobileMenuOpen, toggleMobileMenu } = useUIStore();
 
   const isScrolled = scrollY > 20;
 
@@ -203,7 +203,7 @@ export const Navbar: React.FC<NavbarProps> = ({ variant = 'transparent-on-blue' 
                 </Link>
                 <Link to="/register" onClick={toggleMobileMenu}>
                   <Button variant="neon" size="md" className="w-full font-bold">
-                    Get Started
+                    Join Us
                   </Button>
                 </Link>
               </>

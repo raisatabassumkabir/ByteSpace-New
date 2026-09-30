@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Filter, BarChart2, Shapes, ChevronDown } from 'lucide-react';
+import { Filter, BarChart2, Shapes } from 'lucide-react';
 import { mockCreatorCourses } from '../data/mockCreator';
 import { CreatorCourseCard } from './CreatorCourseCard';
 import { cn } from '@/utils/cn';
