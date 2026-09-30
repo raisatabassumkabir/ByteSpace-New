@@ -56,7 +56,7 @@ export const CourseFilterGrid: React.FC = () => {
         <button
           key={cat}
           onClick={() => setActiveCategory(cat)}
-          className="px-2 py-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 hover:underline transition-all duration-200 whitespace-nowrap select-none"
+          className="px-2 py-1.5 text-sm font-bold text-brand-600 hover:text-brand-700 hover:underline transition-all duration-200 whitespace-nowrap select-none"
         >
           {cat}
         </button>
