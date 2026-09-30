@@ -66,7 +66,7 @@ export const FeatureHighlights: React.FC = () => {
           <div className="relative flex justify-center lg:justify-end w-full lg:max-w-[621px] shrink-0 mt-12 lg:mt-0">
             <div className="relative w-full flex justify-center">
               {/* Neon Green Squiggle / Spring */}
-              <div className="absolute right-[-10%] lg:right-[2%] top-[15%] lg:top-[10%] z-40 pointer-events-none opacity-95 animate-float-slow">
+              <div className="absolute right-[-10%] lg:right-[2%] top-[15%] lg:top-[10%] z-40 pointer-events-none animate-float-slow">
                 <img src="/images/feature-spiral-1.png" alt="Neon Spiral" className="w-32 sm:w-40 lg:w-[220px] h-auto drop-shadow-2xl object-contain" />
               </div>              
               <img
@@ -133,7 +133,7 @@ export const FeatureHighlights: React.FC = () => {
           <div className="relative flex justify-center lg:justify-start w-full lg:max-w-[621px] shrink-0 order-2 lg:order-1 mt-12 lg:mt-0">
             <div className="relative w-full flex justify-center">
               {/* Neon Green Squiggle / Spring */}
-              <div className="absolute right-[5%] lg:right-[2%] top-[25%] lg:top-[20%] z-30 pointer-events-none opacity-95 animate-float-slow">
+              <div className="absolute right-[5%] lg:right-[2%] top-[25%] lg:top-[20%] z-30 pointer-events-none animate-float-slow">
                 <img src="/images/feature-spiral-2.png" alt="Neon Spiral" className="w-24 sm:w-32 lg:w-[220px] h-auto drop-shadow-xl object-contain" />
               </div>
               {/* Image of the female creator */}

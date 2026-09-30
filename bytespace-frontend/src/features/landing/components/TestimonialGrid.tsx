@@ -29,19 +29,23 @@ export const TestimonialGrid: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden border-t border-surface-200 bg-gradient-to-br from-white via-blue-50/50 to-[#e2ff66]/20">
+    <section className="relative py-20 lg:py-32 overflow-hidden border-t border-surface-200 bg-white">
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      {/* Background Glows / Shading matching the reference */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] bg-[#e2ff66]/40 rounded-full blur-[100px] lg:blur-[120px] pointer-events-none z-0" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] lg:w-[600px] lg:h-[600px] bg-blue-400/15 rounded-full blur-[100px] lg:blur-[120px] pointer-events-none z-0" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 z-10">
         
         {/* Section Header: 2-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
-            <h2 className="text-4xl sm:text-5xl lg:text-5xl font-display font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-[36px] sm:text-[40px] lg:text-[44px] font-display font-bold text-slate-900 tracking-tight leading-[1.2]">
               Discover What Our<br className="hidden lg:block" /> Community Is Saying
             </h2>
           </div>
           <div>
-            <p className="text-sm sm:text-base text-slate-500 leading-relaxed font-normal lg:max-w-md">
+            <p className="text-[14px] sm:text-[15px] lg:text-[16px] text-slate-500 leading-[1.8] font-normal">
               At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.
             </p>
           </div>
@@ -65,16 +69,16 @@ export const TestimonialGrid: React.FC = () => {
 
               {/* Author Meta */}
               <div className="mb-6">
-                <h4 className="font-bold text-xl text-slate-900 leading-snug">
+                <h4 className="font-bold text-[18px] lg:text-[20px] text-slate-900 leading-snug">
                   {t.name}
                 </h4>
-                <p className="text-sm text-brand-600 font-medium mt-1">
+                <p className="text-[14px] text-blue-500 font-light mt-1">
                   {t.role}
                 </p>
               </div>
 
               {/* Quote */}
-              <p className="text-slate-500 text-sm leading-relaxed font-normal">
+              <p className="text-slate-500 text-[14px] lg:text-[15px] leading-[1.8] font-light">
                 {t.content}
               </p>
             </div>

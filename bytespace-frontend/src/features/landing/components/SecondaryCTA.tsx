@@ -12,43 +12,43 @@ export const SecondaryCTA: React.FC = () => {
       <img
         src="/images/cta-neon-spiral-1.png"
         alt=""
-        className="absolute -top-16 -left-12 lg:top-[0%] lg:left-[0%] w-48 lg:w-[300px] opacity-90 animate-float pointer-events-none drop-shadow-2xl z-10"
+        className="absolute -top-16 -left-12 lg:top-[0%] lg:left-[0%] w-48 lg:w-[300px] animate-float pointer-events-none drop-shadow-2xl z-10"
       />
       <img
         src="/images/white-spiral-1.png"
         alt=""
-        className="absolute top-[20%] left-[12%] lg:top-[15%] lg:left-[15%] w-16 lg:w-[300px] opacity-80 animate-float-slow pointer-events-none drop-shadow-xl z-0 -rotate-12"
+        className="absolute top-[20%] left-[12%] lg:top-[10%] lg:left-[10%] w-16 lg:w-[200px] animate-float-slow pointer-events-none drop-shadow-xl z-0 -rotate-12"
       />
 
       {/* Bottom Left: White Cone & Neon Torus */}
       <img
         src="/images/cta-white-cone.png"
         alt=""
-        className="absolute bottom-[10%] left-[-2%] lg:bottom-[10%] lg:left-[0%] w-32 lg:w-48 opacity-90 animate-float pointer-events-none drop-shadow-2xl z-10"
+        className="absolute bottom-[10%] left-[-2%] lg:bottom-[10%] lg:left-[0%] w-32 lg:w-48 animate-float pointer-events-none drop-shadow-2xl z-10"
       />
       <img
         src="/images/cta-neon-torus.png"
         alt=""
-        className="absolute -bottom-10 left-[10%] lg:-bottom-3 lg:left-[8%] w-36 lg:w-[450px] opacity-90 animate-float-slow pointer-events-none drop-shadow-2xl z-0"
+        className="absolute -bottom-10 left-[10%] lg:-bottom-3 lg:left-[8%] w-36 lg:w-[450px] animate-float-slow pointer-events-none drop-shadow-2xl z-0"
       />
 
       {/* Top Right: Neon Pyramid & Huge White Cylinder */}
       <img
         src="/images/cta-neon-pyramid.png"
         alt=""
-        className="absolute top-[5%] right-[25%] lg:top-[5%] lg:right-[15%] w-24 lg:w-[250px] opacity-90 animate-float-slow pointer-events-none drop-shadow-2xl z-10"
+        className="absolute top-[5%] right-[25%] lg:top-[5%] lg:right-[15%] w-24 lg:w-[250px] animate-float-slow pointer-events-none drop-shadow-2xl z-10"
       />
       <img
         src="/images/cta-white-cylinder.png"
         alt=""
-        className="absolute -top-[-1%] -right-16 lg:-top-35 lg:-right-10 w-56 lg:w-[320px] opacity-95 animate-float pointer-events-none drop-shadow-2xl z-0"
+        className="absolute -top-[-1%] -right-16 lg:-top-35 lg:-right-10 w-56 lg:w-[320px] animate-float pointer-events-none drop-shadow-2xl z-0"
       />
 
       {/* Bottom Right: Neon Spring */}
       <img
         src="/images/cta-neon-spiral-2.png"
         alt=""
-        className="absolute -bottom-4 right-[5%] lg:-bottom-[2%] lg:right-[5%] w-32 lg:w-[350px] opacity-90 animate-float pointer-events-none drop-shadow-2xl z-10"
+        className="absolute -bottom-4 right-[5%] lg:-bottom-[2%] lg:right-[5%] w-32 lg:w-[350px] animate-float pointer-events-none drop-shadow-2xl z-10"
       />
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">

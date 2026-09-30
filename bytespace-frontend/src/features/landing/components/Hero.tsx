@@ -23,15 +23,15 @@ export const Hero: React.FC = () => {
     <section className="relative w-full overflow-hidden bg-brand-600 bg-hero-grid text-white pt-4 md:pt-8 pb-0">
       {/* 3D Abstract Shapes pinned to far screen edges */}
       {/* 1. Top Left Neon Spring */}
-      <div className="absolute -left-10 lg:-left-[5%] top-[15%] lg:top-[-5%] pointer-events-none z-10 hidden sm:block animate-float-slow">
+      <div className="absolute -left-10 lg:-left-[8%] top-[20%] lg:top-[-5%] pointer-events-none z-10 hidden sm:block animate-float-slow">
         <img src="/images/neon-spiral.png" alt="Neon Spiral" className="w-48 sm:w-64 lg:w-[450px] h-auto drop-shadow-2xl object-contain" />
       </div>
       {/* 2. Mid Left White Spring */}
-      <div className="absolute left-[8%] lg:left-[16%] top-[20%] pointer-events-none z-10 hidden md:block animate-float">
+      <div className="absolute left-[8%] lg:left-[12%] top-[25%] pointer-events-none z-10 hidden md:block animate-float">
         <img src="/images/white-spiral-1.png" alt="White Spiral" className="w-20 sm:w-24 lg:w-[220px] h-auto drop-shadow-xl object-contain" />
       </div>
       {/* 3. Bottom Left White Torus */}
-      <div className="absolute -left-0 lg:-left-[-8%] bottom-[-5%] sm:bottom-0 lg:bottom-[2%] pointer-events-none z-30 hidden sm:block animate-float">
+      <div className="absolute -left-0 lg:-left-[-6%] bottom-[-5%] sm:bottom-0 lg:bottom-[2%] pointer-events-none z-30 hidden sm:block animate-float">
         <img src="/images/hero-white-torus.png" alt="White Torus" className="w-48 sm:w-56 lg:w-[380px] h-auto drop-shadow-2xl object-contain" />
       </div>
       {/* 4. Top Right Neon Cylinder */}
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
         <img src="/images/white-pyramid.png" alt="White Pyramid" className="w-32 sm:w-40 lg:w-[220px] h-auto drop-shadow-xl object-contain rotate-[3deg]" />
       </div>
       {/* 6. Bottom Right White Spring */}
-      <div className="absolute -right-4 lg:-right-[-10%] bottom-[5%] lg:bottom-[0%] pointer-events-none z-30 hidden sm:block animate-float">
+      <div className="absolute -right-4 lg:-right-[-4%] bottom-[5%] lg:bottom-[0%] pointer-events-none z-30 hidden sm:block animate-float">
         <img src="/images/white-spiral-2.png" alt="White Spiral" className="w-32 sm:w-40 lg:w-[380px] h-auto drop-shadow-2xl object-contain" />
       </div>
 
