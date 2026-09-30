@@ -49,6 +49,20 @@ export const CourseFilterGrid: React.FC = () => {
 
   const renderPill = (cat: string) => {
     const isSelected = activeCategory === cat;
+    const isMore = cat === '+ More';
+    
+    if (isMore) {
+      return (
+        <button
+          key={cat}
+          onClick={() => setActiveCategory(cat)}
+          className="px-2 py-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 hover:underline transition-all duration-200 whitespace-nowrap select-none"
+        >
+          {cat}
+        </button>
+      );
+    }
+
     return (
       <button
         key={cat}
